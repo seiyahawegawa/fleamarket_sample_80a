@@ -32,18 +32,16 @@ Things you may want to cover:
 |password|string|null: false|
 
 ### Association
-- has_one:profiles
-- has_one:credit_cards
-- has_one:purrchases
-- has_one:items,through
+- has_one:profile
+- has_one:credit_card
+- has_one:purchase
 - has_many:items
 
 ## itemsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|user|references|null :false, foreign_key|
-|item_images_id|integer|null: false, foreign_key: true|
+|user|references|null :false, foreign_key: true|
 |item_name|string|null: false|
 |item_description|text|null: false|
 |category_id|integer|null: false,uniqueness: true|
@@ -53,10 +51,9 @@ Things you may want to cover:
 |days_to_delivery|integer|null: false|
 
 ### Association
-- has_one:item_images
-- has_one:purrchases
-- has_one:user,through
-- has_many:users
+- has_many:item_images
+- has_one:purchas
+- belongs_to:user
 - belongs_to_active_hash:category
 - belongs_to_active_hash:condition
 - belongs_to_active_hash:shipping_charges
@@ -67,14 +64,12 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|user|references|null: false,foregin_key|
+|user|references|null: false,foregin_key: true|
 |first_name|string|null: false|
 |family_name|string|null: false|
 |first_name_kana|string|null: false|
 |family_name_kana|string|null: false|
-|birthday-year|date|null: false|
-|birthday-month|date|null: false|
-|birthday-day|date|null: false|
+|birthday|date|null: false|
 |introduction|text||
 
 ### Association
@@ -84,14 +79,14 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|card_number|data|null: false|
-|expiration_date_year|data|null: false|
-|expiration_date_month|data|null: false|
+|user_id|references|null: false,foregin_key: true|
+|customer_id|string|null: false|
+|card_id|string|null: false|
 |security_code|data|null: false|
 
 
 ### Association
-- belonges_to: user
+- belongs_to: user
 
 ## item_imagesテーブル
 
@@ -101,68 +96,14 @@ Things you may want to cover:
 |item|references|null: false, foreign_key: true|
 
 ### Association
-- belonges_to: items
+- belongs_to: item
 
-## category(active_hash)テーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|category|string|null: false|
-
-### Association
-- has_many: items
-
-## shipping_charges(active_hash)テーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|shipping_charges|string|null: false|
-
-### Association
-- has_many: items
-
-## condition(active_hash)テーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|condition|string|null: false|
-
-### Association
-- has_many: items
-
-## shipping_charges(active_hash)テーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|shipping_charges|string|null: false|
-
-### Association
-- has_many: items
-
-## days_to_delivery(active_hash)テーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|shipping_charges|string|null: false|
-
-### Association
-- has_many: items
-
-## prefecture(active_hash)テーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|prefecture|string|null: false|
-
-### Association
-- has_many:items
-- has_many:addresses
 
 ## addressesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|purrchases|references|null: false, foreign_key|
+|purchases|references|null: false, foreign_key: true|
 |address_first_name|string| null: false|
 |address_family_name|string|null: false|
 |address_first_name_kana|string|null: false|
@@ -175,10 +116,10 @@ Things you may want to cover:
 |phone_number|integer|null:false,uniqueness:true|
 
 ### Association
-- belonge_to:purrchases
+- belongs_to:purchas
 - belongs_to_active_hash:prefecture
 
-## purrchasesテーブル
+## purchasesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
