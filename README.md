@@ -34,7 +34,7 @@ Things you may want to cover:
 ### Association
 - has_one:profile
 - has_one:credit_card
-- has_one:purchase
+- has_many:purchases
 - has_many:items
 
 ## itemsテーブル
@@ -52,7 +52,7 @@ Things you may want to cover:
 
 ### Association
 - has_many:item_images
-- has_one:purchas
+- has_one:purchase
 - belongs_to:user
 - belongs_to_active_hash:category
 - belongs_to_active_hash:condition
@@ -82,7 +82,6 @@ Things you may want to cover:
 |user_id|references|null: false,foregin_key: true|
 |customer_id|string|null: false|
 |card_id|string|null: false|
-|security_code|data|null: false|
 
 
 ### Association
@@ -103,7 +102,7 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|purchases|references|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
 |address_first_name|string| null: false|
 |address_family_name|string|null: false|
 |address_first_name_kana|string|null: false|
@@ -116,7 +115,7 @@ Things you may want to cover:
 |phone_number|integer|null:false,uniqueness:true|
 
 ### Association
-- belongs_to:purchas
+- belongs_to:user
 - belongs_to_active_hash:prefecture
 
 ## purchasesテーブル
