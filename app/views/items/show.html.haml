@@ -1,9 +1,108 @@
-.item-box 
-	.item-name
-		<h1>ブラウス</h1>
-	.item-main-content
-		.item-image
-		.item-detail-table
-	.item-price-box
-	.item-buy-btn
-	.item-description
+%header.hedear
+	メルカリヘッダー メンバーが作成中
+.main	
+	.show-main
+		.item-box 
+			.item-box-name
+				%h2
+					ハリネズミ
+			
+			.item-image-box
+				.image-main
+					= image_tag "https://navi.harinezumi.org/wp-content/uploads/kohari12.jpg",class:"image-main-image"
+				.sub-image	
+					= image_tag "https://navi.harinezumi.org/wp-content/uploads/kohari12.jpg",class:"image-sub-image"
+					= image_tag "https://navi.harinezumi.org/wp-content/uploads/kohari12.jpg",class:"image-sub-image"
+
+			.item-price-box
+				%span.item-price 
+					¥1,200 
+				%sane.item-tex
+					(税込)
+				%span.item-shipping-fee
+					送料込み
+				
+			%a.item-buy-btn	
+				購入画面に進む	
+			.item-description
+				ハリネズミ（針鼠）は、哺乳綱Eulipotyphla目ハリネズミ科ハリネズミ亜科（Erinaceinae）に分類される構成種の総称。
+			.item-detail-table	
+				%table
+					%tbody
+						%tr
+							%th
+								出品者
+							%td
+								武蔵
+						%tr
+							%th
+								カテゴリー
+							%td
+								動物
+						%tr
+							%th
+								ブランド
+							%td
+								ハリネズミ		
+						%tr
+							%th
+								商品サイズ
+							%td
+								ｓ
+						%tr
+							%th
+								商品の状態
+							%td
+								最高
+						%tr
+							%th
+								配送料の負担
+							%td
+								送料込み(出品者負担)
+						%tr
+							%th
+								配送の方法
+							%td
+								らくらくメルカリ便
+						%tr
+							%th
+								配送先の地域
+							%td
+								東京都
+			.opptionl-area			
+				.favorite-btn
+					=icon('far','star')
+					お気に入り
+				.optinal-btn
+					=icon('far','flag')
+					不適切な商品の通報						
+	.item-detail-message	
+		.message-content
+			.message-form
+				%a
+					相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+			.massage-coment		
+				%textarea.textarea
+			.message-submit	
+				%sapan
+					コメントする	
+
+	.items-in-user-profile
+		.items-box-head
+			武蔵さんのその他の出品	
+		.items-box-content
+			.items-box
+				.items-box-photo
+					= image_tag "https://navi.harinezumi.org/wp-content/uploads/kohari12.jpg"
+			.items-box-body
+				.items-box-name
+					ハリネズミ
+				.items-box-num
+					.items-box-price
+						¥1,200	
+
+
+
+						
+
+
