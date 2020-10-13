@@ -5,7 +5,7 @@
 		.item-box 
 			.item-box-name
 				%h2
-					ハリネズミ
+					= @item.name
 
 			.item-image-box
 				.image-main
@@ -38,7 +38,7 @@
 							%th
 								カテゴリー
 							%td
-								動物
+								= @item.user.nickname
 						%tr
 							%th
 								ブランド
