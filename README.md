@@ -49,6 +49,7 @@ Things you may want to cover:
 |shipping_charges_id|integer|null: false|
 |prefecture_id|integer|null: false|
 |days_to_delivery|integer|null: false|
+|price|integer|null: false|
 
 ### Association
 - has_many:item_images

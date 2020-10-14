@@ -3,10 +3,9 @@
 .main	
 	.show-main
 		.item-box 
-			.item-box-name
+			.item-box-name	
 				%h2
-					= @item.name
-
+					= @item.item_name
 			.item-image-box
 				.image-main
 					= image_tag "https://navi.harinezumi.org/wp-content/uploads/kohari12.jpg",class:"image-main-image"
@@ -16,7 +15,7 @@
 
 			.item-price-box
 				%span.item-price 
-					¥1,200 
+					= @item.price 
 				%sane.item-tex
 					(税込)
 				%span.item-shipping-fee
@@ -25,50 +24,35 @@
 			%a.item-buy-btn	
 				購入画面に進む	
 			.item-description
-				ハリネズミ（針鼠）は、哺乳綱Eulipotyphla目ハリネズミ科ハリネズミ亜科（Erinaceinae）に分類される構成種の総称。
+				= @item.item_description
 			.item-detail-table	
 				%table
 					%tbody
 						%tr
 							%th
 								出品者
-							%td
-								武蔵
+							%td= @item.user_id
 						%tr
 							%th
 								カテゴリー
 							%td
-								= @item.user.nickname
-						%tr
-							%th
-								ブランド
-							%td
-								ハリネズミ		
-						%tr
-							%th
-								商品サイズ
-							%td
-								ｓ
+								= @item.category_id			
 						%tr
 							%th
 								商品の状態
 							%td
-								最高
+								= @item.conditon_id
 						%tr
 							%th
 								配送料の負担
 							%td
-								送料込み(出品者負担)
-						%tr
-							%th
-								配送の方法
-							%td
-								らくらくメルカリ便
+								= @item.shopping_charges_id
+
 						%tr
 							%th
 								配送先の地域
 							%td
-								東京都
+								= @item.prefecture_id
 			.opptionl-area			
 				.favorite-btn
 					=icon('far','star')

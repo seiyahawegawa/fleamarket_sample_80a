@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2020_10_13_081755) do
     t.integer "shopping_charges_id", null: false
     t.integer "prefecture_id", null: false
     t.integer "days_to_delivery", null: false
+    t.integer "price", null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
