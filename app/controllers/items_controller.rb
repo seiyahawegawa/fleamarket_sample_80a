@@ -5,8 +5,11 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(1)
-  end 
+    @item = Item.find(params[:id])
+  end
+  
+  def buy
+  end  
 
   # 親カテゴリーが選択された後に動くアクション
   def category_children
@@ -34,6 +37,6 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :text, :category_id, :condition_id, :deliverycost_id, :pref_id, :delivery_days_id, :price, images: []).merge(user_id: current_user.id, boughtflg_id:"1")
-  end
+    params.require(:item).permit(:item_name, :item_description, :category_id, :conditon_id, :shopping_charges_id, :prefecture_id, :days_to_delivery, :price).merge(user_id: current_user.id)
+  end 
 end
