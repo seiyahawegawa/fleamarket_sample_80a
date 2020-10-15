@@ -6,7 +6,6 @@ $(function(){
   }
   // 親カテゴリー選択後のイベント
   $('#category-select-parent').on('change', function(){
-    console.log("ssss")
     let parentCategoryId = $(this).val();
     //選択された親カテゴリーのIDを取得
     if (parentCategoryId == ''){

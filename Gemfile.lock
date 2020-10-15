@@ -197,11 +197,7 @@ GEM
       ffi (~> 1.0)
     regexp_parser (1.8.1)
     ruby_dep (1.5.0)
-<<<<<<< HEAD
     ruby_parser (3.14.2)
-=======
-    ruby_parser (3.15.0)
->>>>>>> master
       sexp_processor (~> 4.9)
     rubyzip (2.3.0)
     sass (3.7.4)
@@ -220,11 +216,7 @@ GEM
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
-<<<<<<< HEAD
     sexp_processor (4.15.0)
-=======
-    sexp_processor (4.15.1)
->>>>>>> master
     spring (2.1.1)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -287,10 +279,6 @@ DEPENDENCIES
   capistrano-rbenv
   capistrano3-unicorn
   capybara (>= 2.15)
-<<<<<<< HEAD
-=======
-  font-awesome-sass
->>>>>>> master
   haml-rails (>= 1.0, <= 2.0.1)
   jbuilder (~> 2.7)
   jquery-rails

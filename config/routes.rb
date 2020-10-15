@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  get 'categories/index'
   root 'items#index'
+  resources :categories, only: :index
   resources :items, only: [:index, :show, :new, :edit, :destroy] do
     #Ajaxで動くアクションのルートを作成
     collection do
