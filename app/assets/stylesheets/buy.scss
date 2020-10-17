@@ -1,0 +1,158 @@
+.header_logo_box{
+    height: 128px;
+    background-color: #f8f8f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .image_log{
+        height: 49px;
+        width: 185px;  
+        display: block;
+    }
+}
+.main{
+    box-sizing: border-box;
+    background-color: #f8f8f8;
+    padding: 0px 40px 40px 40px;
+    .confirmation_box{
+        background-color: rgb(255, 255, 255);
+        max-width: 700px;
+        margin: 0px auto;
+        width: 100%;
+        .confirmation{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 32px 16px;
+            .confirmation_name{
+                font-size: 24px;
+                font-weight: 600;
+            }
+        }
+        .item_image_name_price{
+            border-top: 1px solid rgb(245, 245, 245);
+            margin: 0px auto;
+            max-width: 375px;
+            padding: 32px 16px;
+            display: flex;
+            .image_box{
+                .item_image{
+                    width: 80px;
+                    height: 80px;
+                    border-radius: 4px;
+                }
+            }
+            .item_name_price{
+                margin-left: 16px;
+                width: 100%;
+                .item_name{
+                    font-size: 14px;
+                    line-height: 1.4em;
+                    margin-bottom: 8px;
+                }
+                .item_price{
+                    text-align: right;
+                    .postage_included{
+                        font-size: 12px;
+                    }
+                    .price{
+                        font-size: 15px;
+                        font-weight: 600;
+                    }
+
+                }
+            }    
+        }
+        .payment_box{
+            border-top: 1px solid rgb(245, 245, 245);
+            display: flex;
+            justify-content: space-between;
+            margin: 0px auto;
+            padding: 24px 16px;
+            max-width: 375px;
+            font-size: 18px;
+            font-weight: 600;
+            .payment{
+                display: block;
+            }
+            .payment_price{
+                display: block;
+            }
+        }
+        .metho_payment_box{
+            border-top: 1px solid rgb(245, 245, 245);
+            margin: 0px auto;
+            padding: 24px 16px;
+            max-width: 375px;
+            font-size: 14px;
+            .metho_payment{
+                align-items: center;
+                margin-bottom: 16px;
+                font-weight: 600;
+            }
+            .metho_payment_category{
+                P{
+                    line-height: 1.4em;    
+                    .credit_image{
+                        margin-top: 8px;
+                        max-height: 32px;
+                        max-width: 48px;
+                    }        
+                }
+            }
+        }
+        .shipping_address_box{
+            border-top: 1px solid rgb(245, 245, 245);
+            margin: 0px auto;
+            padding: 24px 16px;
+            max-width: 375px;
+            font-size: 14px;
+            .shipping_address{
+                font-size: 14px;
+                font-weight: 600;
+                margin-bottom: 16px;
+            }
+        }
+        .buy_button_box{
+            border-top: 1px solid rgb(245, 245, 245);
+            margin: 0px auto;
+            padding: 24px 16px 48px;;
+            max-width: 375px;
+            text-align: center;
+            .buy_button{
+                background: #ea352d;
+                color: #fff;
+                font-size: 17px;
+                min-height: 48px;
+                padding: 0 24px;
+                font-weight: 600;
+                display: block;
+                line-height: 48px;
+                border-radius: 4px;
+            }
+        }
+    }
+
+}
+.footer_notes{
+    padding: 0px 0px 41px;
+    text-align: center;
+    background-color: #f8f8f8;
+    ul{
+        margin: -16px 0px 40px -16px;
+        font-size: 12px;
+        li{
+            margin: 16px 0px 0px 16px;
+            display: inline;
+        }
+    }
+    .notes_log{
+        height: 65px;
+        margin-bottom: 8px;
+        width: 80px;
+
+    }
+    p{
+        font-size: 12px;
+    }
+}
