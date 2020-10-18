@@ -177,7 +177,7 @@
       .pickup_brand__containerBrand__product--lists__list
         = link_to "#" ,class: "image_tag" do
           %figure.pickup_brand__product__images
-            = image_tag asset_path("image-04)", class: "pickup_brand__product__images--image"
+            = image_tag asset_path("image-04"), class: "pickup_brand__product__images--image"
         .pickup_brand__containerBrand__product--lists__list__body
           %h3.pickup_brand__product--name
             product2
@@ -311,7 +311,7 @@
             お知らせ
   .Footer-page__logo
     = link_to '#', class: "Footer-page__logo__link" do
-      = image_tag "logo-white.png", class: 'Footer-page__logo__link__image'
+      = image_tag asset_path("logo-white.png"), class: 'Footer-page__logo__link__image'
     %p.Footer-page__title © FURIMA
 
 
@@ -319,4 +319,4 @@
   .purchaseBtn
     %span.purchaseBtn__text 
       出品する
-    = image_tag "icon_camera", class: "camera-icon"
+    = image_tag asset_path("icon_camera"), class: "camera-icon"
