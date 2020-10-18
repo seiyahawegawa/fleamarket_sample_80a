@@ -4,7 +4,9 @@ class ItemsController < ApplicationController
     @category_parent =  Category.where("ancestry is null")
   end
 
-
+  def show
+    
+  end  
   # 親カテゴリーが選択された後に動くアクション
   def category_children
     @category_children = Category.find("#{params[:parent_id]}",).children
@@ -34,6 +36,4 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:name, :text, :category_id, :condition_id, :deliverycost_id, :pref_id, :delivery_days_id, :price, images: []).merge(user_id: current_user.id, boughtflg_id:"1")
   end
 
-  def show
-  end  
-
+end
