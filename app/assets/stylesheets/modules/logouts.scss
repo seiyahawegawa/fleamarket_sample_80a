@@ -1,0 +1,19 @@
+* {
+  box-sizing: border-box;
+}
+
+.Wrapper {
+  background-color: #f5f5f5;
+  width: 100%;
+  height: auto;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+.Logout {
+  height: auto;
+  &__boxs {
+    width: 200px;
+    background-color: green;
+  }
+}

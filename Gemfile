@@ -70,3 +70,6 @@ gem 'font-awesome-sass'
 
 gem 'payjp'
 
+gem 'devise'
+
+gem 'jquery-rails'

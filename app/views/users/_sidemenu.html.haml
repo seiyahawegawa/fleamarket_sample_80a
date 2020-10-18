@@ -1,7 +1,7 @@
 .Mypage-main__leftside
   .Mypage-main__menu
-    .Mypage-main__contents
-      .Mypage-main__content-mypagebtn 
+    .Mypage-main__contents 
+      = link_to root_path, class: 'Mypage-main__content Mypage-main__list-name' do
         マイページ
         = icon('fas', 'angle-right') 
       
@@ -32,10 +32,10 @@
         
     .Mypage-main__setting
       設定
-      = link_to '#', class: 'Mypage-main__content Mypage-main__list-name' do
+      = link_to credit_cards_path, class: 'Mypage-main__content Mypage-main__list-name' do
         支払い方法
         = icon('fas', 'angle-right')
       
-      = link_to '#', class: 'Mypage-main__content Mypage-main__list-name' do
+      = link_to logouts_path, class: 'Mypage-main__content Mypage-main__list-name' do
         ログアウト
         = icon('fas', 'angle-right')

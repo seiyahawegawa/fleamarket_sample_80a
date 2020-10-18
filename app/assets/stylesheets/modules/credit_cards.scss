@@ -11,6 +11,29 @@
   justify-content: center;
 }
 
+
+
+.Logout {
+  width: 700px;
+  height: auto;
+  &__boxs {
+  background-color: white;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+  a {
+    text-decoration: none;
+  }
+  &__btns {
+  }
+  
+  &__btns:hover {
+    background-color: #dc143c;
+  }
+}
+
 .Cardpage {
   height: auto;
   &__box {
@@ -33,9 +56,9 @@
     height: 250px;
   }
   &__btn {
-    width: 400px;
     height: 50px;
-    background-color:#ff6347;
+    width: 450px;
+    background-color: red;
     color: white;
     font-weight: 800;
     display: flex;
@@ -45,16 +68,93 @@
   &__btn:hover {
     background-color: #dc143c;
   }
+  &__serectspace {
+    color: white;
+  }   
   a {
     text-decoration: none;
   }
-  i {
-    padding-right: 20px;
+  .crediticon {
+    text-decoration: none;
+    color: white;
   }
 }
 
-.Card-information {
-  
+
+.Creditcreate {
+  width: 700px;
+  height: auto;
+  background-color: white;
+  &__title {
+    text-align: center;
+    height: 80px;
+    border-bottom: 1px solid gainsboro;
+  }
+}
+.Creditform {
+  padding-top: 50px;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  label {
+    font-size: 20px;
+    font-weight: 700;
+  }
+  span {
+    font-size: 15px;
+    background-color: red;
+    color: white;
+    font-weight: 700;
+  }
 }
 
+.Cardnumber-input {
+  height: 60px;
+  width: 400px;
+  border: 1px solid #cccccc;
+  margin: 10px 0;
+}
 
+.Creditslist {
+  display: flex;
+  justify-content: space-around;
+}
+
+.CreditIcon {
+ width: 40px;
+ height: 20px; 
+ margin-bottom: 30px;
+}
+
+.Creditform__datefield {
+}
+
+.dateSelect {
+  margin: 10px 0 30px 0;
+  width: 130px;
+  height: 50px;
+  border: 1px solid #cccccc;
+}
+
+.creditForm__securityfield { 
+  margin-bottom: 50px;
+}
+
+.securityInput {
+  margin-top: 10px;
+  height: 60px;
+  width: 400px;
+  border: 1px solid #cccccc;
+}
+
+.creditsSubmit {
+  height: 50px;
+  width: 450px;
+  background-color: red;
+  color: white;
+  font-weight: 800;
+}
+.creditsSubmit:hover {
+  background-color: #ff6347;
+  
+}
