@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_18_081002) do
+ActiveRecord::Schema.define(version: 2020_10_18_064650) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -18,14 +18,6 @@ ActiveRecord::Schema.define(version: 2020_10_18_081002) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "ancestry"
     t.index ["ancestry"], name: "index_categories_on_ancestry"
-  end
-
-  create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "src"
-    t.bigint "item_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["item_id"], name: "index_images_on_item_id"
   end
 
   create_table "item_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -42,10 +34,11 @@ ActiveRecord::Schema.define(version: 2020_10_18_081002) do
     t.integer "conditon_id", null: false
     t.integer "shopping_charges_id", null: false
     t.integer "prefecture_id", null: false
-    t.integer "days_to_delivery", null: false
+    t.integer "days_to_delivery_id", null: false
     t.integer "price", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "images", "items"
   add_foreign_key "item_images", "items"
 end
