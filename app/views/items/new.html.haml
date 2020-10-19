@@ -22,12 +22,13 @@
                   %div#image-input{tabindex:"0"}
                     -# = f.label :images, for: "item_images0", class: 'sell-container__content__upload__items__box__label', data: {label_id: 0 } do 
                     -#   = f.file_field :images, multiple: true, class: "sell-container__content__upload__items__box__input", id: "item_images0", style: 'display: none;'
-                    = f.fields_for :item_images do |image|
-                      = image.file_field :image
-                      %pre
-                        %i.fas.fa-camera.fa-lg
-                        ドラッグアンドドロップ
-                        またはクリックしてファイルをアップロード
+                    .sell-container__content__upload__items__box__label
+                      = f.fields_for :item_images  do |image| 
+                        = image.file_field :image,multiple: true, class: "sell-container__content__upload__items__box__input", id: "item_images0"
+                        %pre
+                          %i.fas.fa-camera.fa-lg
+                          ドラッグアンドドロップ
+                          またはクリックしてファイルをアップロード
           .error-messages#error-image
 
         -#商品名部分
