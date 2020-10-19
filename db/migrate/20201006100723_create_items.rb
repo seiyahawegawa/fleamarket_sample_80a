@@ -8,7 +8,7 @@ class CreateItems < ActiveRecord::Migration[6.0]
       t.integer :conditon_id, null: false
       t.integer :shopping_charges_id, null: false
       t.integer :prefecture_id, null: false
-      t.integer :days_to_delivery, null: false
+      t.integer :days_to_delivery_id, null: false
       t.integer :price, null: false
       t.timestamps
     end
