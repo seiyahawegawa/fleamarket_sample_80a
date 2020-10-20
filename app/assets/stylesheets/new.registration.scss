@@ -1,0 +1,59 @@
+.new_registration {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+  .new_user {
+  
+    .registration_nickname, .registration_email, .registration_password, .password_confirmation {
+      font-weight: bold;
+      padding-bottom: 10px;
+      position: relative;
+      left: 430px;
+    }
+    .registration_nickname input[type="text"],.registration_email input[type="email"],.registration_password input[type="password"],.password_confirmation input[type="password"] {
+      width: 350px;
+      height: 40px;
+      padding-left: 15px;
+    }
+    .actions {
+      margin-top: 10px;
+      .signin-btn {
+        display: inline-block;
+        border: solid 1px #3CCACE;
+        border-radius: 5px;
+        width: 370px;
+        height: 40px;
+        color: white;
+        background-color: #3CCACE;
+        font-size: 20px;
+        position: relative;
+        left: 430px;
+      }
+    }
+  }
+.relogin1 {
+  font-weight: bold;;
+  display: inline-block;
+  height: 40px;
+  background-color: white;
+  border:  solid 2px #3CCACE;
+  border-radius: 5px;
+  text-decoration: none;
+  width: 365px;
+  line-height: 2.5;
+  text-align: center;
+  margin-left: 430px;
+  margin-top: 15px;
+  .relogin {
+  text-decoration: none;
+  color: #3CCACE;
+  }
+}
+.must {
+  color:white;
+  border: solid 2px red;
+  background-color: red;
+  border-radius: 5px;
+
+}
