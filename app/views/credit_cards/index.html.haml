@@ -1,0 +1,16 @@
+.Wrapper
+  = render "users/sidemenu"
+  .Cardpage
+    .Cardpage__box
+      .Cardpage__choice
+        支払い方法
+      .Cardpage__registration-space
+        .Cardpage__btn
+          = link_to new_credit_card_path do
+            .Cardpage__serectspace
+              クレジットカードを登録
+              = icon('far', 'credit-card', class: 'Cardpage__crediticon')
+
+       
+      
+  
