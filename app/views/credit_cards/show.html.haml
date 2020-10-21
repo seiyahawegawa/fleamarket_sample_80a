@@ -1,4 +1,10 @@
-
-= link_to new_credit_card_path do
-            .Cardpage__serectspace
-              クレジットカードを登録
+.Wrapper
+  = render 'users/sidemenu'
+  .Create
+    .Create__frame
+      .Create__frame-message
+        登録が完了しました
+      .Create__frame-toppage
+        = link_to "#" do
+          .Create__frame-topbtn
+            トップページ画面へ

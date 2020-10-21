@@ -10,10 +10,34 @@
   display: flex;
   justify-content: center;
 }
+
 .Logout {
   height: auto;
   &__boxs {
-    width: 200px;
-    background-color: green;
+    width: 700px;
+    height: 200px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  a {
+    text-decoration: none;
+  }
+  &__btns {
+    font-weight: 800;
+    height: 50px;
+    width: 450px;
+    background-color: red;
+    color: white;
+    font-weight: 800;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  &__btns:hover {
+    background-color: #dc143c;
   }
 }
+
+  

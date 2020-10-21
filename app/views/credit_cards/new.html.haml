@@ -4,12 +4,12 @@
     .Creditcreate__title
       %h1 クレジットカード情報入力
     .Creditform
-      = form_with model: @credit, method: :post, id: "cardcreateform" do |f|
+      = form_with model: @credit, url: credit_cards_path, method: :post, id: "cardcreateform" do |f|
         .Creditform__numberfield
           %label(for="Cardnumber-input") カード番号
           %span.Creditpoint 必須
           %br
-          = f.text_field :card_number, type: "text", class: 'Cardnumber-input', id: 'card-bumber', placeholder: "半角数字のみ", maxlength: 16
+          = f.text_field :card_number, type: "text", class: 'Cardnumber-input', id: 'card-number', placeholder: "半角数字のみ", maxlength: 16
           .Creditslist
             = image_tag("jcb.gif", class: 'CreditIcon')
             = image_tag("visa.gif", class: 'CreditIcon')
