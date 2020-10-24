@@ -16,6 +16,34 @@
       height: 40px;
       padding-left: 15px;
     }
+    .registration__name--contents {
+      padding-bottom: 10px;
+      position: relative;
+      left: 430px;
+      font-weight: bold;
+      .contents-field__input  {
+        height: 40px;
+        width: 175px;
+      }
+    }
+   .registration__namekana--contents{
+     padding-bottom: 10px;
+     position: relative;
+     left: 430px;
+     font-weight: bold;
+     .contents-field__input  {
+      height: 40px;
+      width: 175px;
+     }
+    }
+   .registration__birth--date {
+     padding-bottom: 10px;
+     position: relative;
+     left: 430px;
+     font-weight: bold;
+    
+     }
+   }
     .actions {
       margin-top: 10px;
       .signin--btn {

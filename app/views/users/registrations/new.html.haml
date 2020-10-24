@@ -26,18 +26,18 @@
     %span.class.must 必須
     %br/
     = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "パスワードをもう一度入力してください"
-  .registraion__name--contents
+  .registration__name--contents
     = f.label :family_name, "お名前（全角）"
     %span.class.must 必須
     %br/
-    = f.text_field :family_name, class:"contents-field__input half", placeholder: '例）山田'
-    = f.text_field :first_name, class:"contents-field__input half", placeholder: '例）太郎'
-  .registraion__namekana--contents
+    = f.text_field :family_name, class:"contents-field__input", placeholder: '例）山田'
+    = f.text_field :first_name, class:"contents-field__input", placeholder: '例）太郎'
+  .registration__namekana--contents
     = f.label :first_name, "お名前カナ（全角）"
     %span.class.must 必須
     %br/
-    = f.text_field :family_name_kana, class:"contents-field__input half", placeholder: '例）ヤマダ'
-    = f.text_field :first_name_kana, class:"contents-field__input half", placeholder: '例）タロウ'
+    = f.text_field :family_name_kana, class:"contents-field__input", placeholder: '例）ヤマダ'
+    = f.text_field :first_name_kana, class:"contents-field__input", placeholder: '例）タロウ'
   .registration__birth--date
     = f.label :birth_date, "生年月日"
     %span.class.must 必須
