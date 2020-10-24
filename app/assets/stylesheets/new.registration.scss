@@ -1,24 +1,24 @@
-.new_registration {
+.new--registration {
   text-align: center;
   font-size: 20px;
   font-weight: bold;
 }
   .new_user {
   
-    .registration_nickname, .registration_email, .registration_password, .password_confirmation {
+    .registration__nickname, .registration__email, .registration__password, .password__confirmation {
       font-weight: bold;
       padding-bottom: 10px;
       position: relative;
       left: 430px;
     }
-    .registration_nickname input[type="text"],.registration_email input[type="email"],.registration_password input[type="password"],.password_confirmation input[type="password"] {
+    .registration__nickname input[type="text"],.registration__email input[type="email"],.registration__password input[type="password"],.password__confirmation input[type="password"] {
       width: 350px;
       height: 40px;
       padding-left: 15px;
     }
     .actions {
       margin-top: 10px;
-      .signin-btn {
+      .signin--btn {
         display: inline-block;
         border: solid 1px #3CCACE;
         border-radius: 5px;
