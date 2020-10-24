@@ -26,24 +26,43 @@
         width: 175px;
       }
     }
-   .registration__namekana--contents{
+    .registration__namekana--contents{
      padding-bottom: 10px;
      position: relative;
      left: 430px;
      font-weight: bold;
-     .contents-field__input  {
+      .contents-field__input  {
       height: 40px;
       width: 175px;
-     }
+      }
     }
-   .registration__birth--date {
-     padding-bottom: 10px;
-     position: relative;
-     left: 430px;
-     font-weight: bold;
-    
-     }
-   }
+    .registration__birth--date {
+      padding-bottom: 10px;
+      position: relative;
+      left: 430px;
+      font-weight: bold;   
+        #user_birth_date_1i{
+        height: 40px;
+        }
+    }
+    .registration__introduction {
+      padding-bottom: 10px;
+      position: relative;
+      left: 430px;
+      font-weight: bold;
+        .coments-field__input {
+          height: 80px;
+          width: 350px;
+        }
+        .option {
+          color: white;
+          border: solid 2px #3CCACE;
+          background-color: #3CCACE;
+          border-radius: 5px;
+
+        }
+    }
+  
     .actions {
       margin-top: 10px;
       .signin--btn {
