@@ -1,12 +1,15 @@
 $(function(){
+ 
   // カテゴリーセレクトボックスのオプションを作成
   function categoryOption(category){
     var optionHtml = `<option value="${category.id}">${category.name}</option>`;
     return optionHtml;
   }
   // 親カテゴリー選択後のイベント
-  $('#category-select-parent').on('change', function(){
+  $('#category-select').on('change', function(){
+     console.log("aaa")
     let parentCategoryId = $(this).val();
+    console.log(parentCategoryId)
     //選択された親カテゴリーのIDを取得
     if (parentCategoryId == ''){
       //親カテゴリーが空（初期値）の時
@@ -15,7 +18,7 @@ $(function(){
       //子と孫を削除するする
     }else{
       $.ajax({
-        url: '/items/category_children',
+        url: 'category_children',
         type: 'GET',
         data: { parent_id: parentCategoryId },
         dataType: 'json'
@@ -85,4 +88,3 @@ $(function(){
     }
   });
 });
-

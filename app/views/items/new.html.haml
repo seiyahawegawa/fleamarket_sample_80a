@@ -1,11 +1,11 @@
 .sell
   %header.sell-header 
     = link_to root_path do
-      -# = image_tag 'mercari_top_logo.svg', alt: 'mercari', height: '49', width: '185'
+      = image_tag "logo.png", alt: "logo", width: '140', class: 'Header__contents__top__icon__logo__img'
   -#メイン部分
   %main
     %section.sell-container
-      = form_with model: @items do |f|
+      = form_with model: @item do |f|
 
         -# 画像部分
         .sell-container__content
@@ -20,8 +20,10 @@
               .sell-container__content__upload__items__box
                 %ul#output-box
                   %div#image-input{tabindex:"0"}
-                    = f.label :images, for: "item_images0", class: 'sell-container__content__upload__items__box__label', data: {label_id: 0 } do 
-                      = f.file_field :images, multiple: true, class: "sell-container__content__upload__items__box__input", id: "item_images0", style: 'display: none;'
+                    -# = f.label :images, for: "item_images0", class: 'sell-container__content__upload__items__box__label', data: {label_id: 0 } do 
+                    -#   = f.file_field :images, multiple: true, class: "sell-container__content__upload__items__box__input", id: "item_images0", style: 'display: none;'
+                    = f.fields_for :item_images do |image|
+                      = image.file_field :image
                       %pre
                         %i.fas.fa-camera.fa-lg
                         ドラッグアンドドロップ
@@ -35,7 +37,7 @@
               商品名
               %span.sell-title__require
                 必須
-          = f.text_field :name, {class:'sell-container__content__name', required: "required", placeholder: '商品名（必須 40文字まで)'}
+          = f.text_field :item_name, {class:'sell-container__content__name', required: "required", placeholder: '商品名（必須 40文字まで)'}
           .error-messages#error-name
 
           .sell-title
@@ -43,7 +45,7 @@
               商品の説明
               %span.sell-title__require
                 必須
-          = f.text_area :text,{class: 'sell-container__content__description', required: "required", rows: '7', maxlength: '1000', placeholder: '商品の説明 （必須 1,000文字以内）'}
+          = f.text_area :item_description,{class: 'sell-container__content__description', required: "required", rows: '7', maxlength: '1000', placeholder: '商品の説明 （必須 1,000文字以内）'}
           -# placeholderでtems_helperを呼び出す
           .sell-container__content__word-count
             %span#word-count
@@ -72,8 +74,8 @@
                 %span.sell-title__require
                   必須
             .sell-collection_select
-              = f.label :condition_id, {class: 'sell-collection_select__label'} do
-                .sell-collection_select__input 選択してください
+              .sell-collection_select__label
+                = f.collection_select :conditon_id, Conditon.all, :id, :name, {prompt:"選択してください"},{class: 'sell-collection_select__input'}
                 %i.fas.fa-chevron-down
             .error-messages#error-condition
 
@@ -90,8 +92,8 @@
                 %span.sell-title__require
                   必須
             .sell-collection_select
-              = f.label :deliverycost_id, {class: 'sell-collection_select__label'} do
-                .sell-collection_select__input 選択してください
+              .sell-collection_select__label
+                = f.collection_select :days_to_delivery_id, DaysToDelivery.all, :id, :name, {prompt:"選択してください"},{class: 'sell-collection_select__input'}
                 %i.fas.fa-chevron-down
             .error-messages#error-deliverycost
 
@@ -101,8 +103,8 @@
                 %span.sell-title__require
                   必須
             .sell-collection_select
-              = f.label :pref_id, class: 'sell-collection_select__label' do
-                .sell-collection_select__input 選択してください
+              .sell-collection_select__label
+                = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt:"選択してください"},{class: 'sell-collection_select__input'}
                 %i.fas.fa-chevron-down
             .error-messages#error-pref
 
@@ -112,8 +114,8 @@
                 %span.sell-title__require
                   必須
             .sell-collection_select
-              = f.label :delivery_days_id, class: 'sell-collection_select__label' do
-                .sell-collection_select__input 選択してください
+              .sell-collection_select__label
+                = f.collection_select :shopping_charges_id, ShoppingCharges.all, :id, :name, {prompt:"選択してください"},{class: 'sell-collection_select__input'}
                 %i.fas.fa-chevron-down
             .error-messages#error-delivery_days
 
@@ -169,7 +171,7 @@
             プライバシーポリシー
         %li
           = link_to '#' do
-            メルカリ利用規約
+            フリマ利用規約
         %li
           = link_to '#' do
             特定商取引に関する表記
@@ -177,4 +179,4 @@
       -# = image_tag 'logo-gray.svg', alt: 'mercari', height: '65', width: '80'
     %p
       %small
-        &copy; Mercari, Inc.
+        &copy; Frima, Inc.
