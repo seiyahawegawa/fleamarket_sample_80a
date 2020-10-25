@@ -1,0 +1,68 @@
+.new_session {
+  font-weight: bold;
+  text-align: center;
+  font-size: 20px;
+  margin-top: 40px;
+}
+.session_email input[type="email"],.password_field3 input[type="password"],.password_field4 {
+  width: 350px;
+  height: 40px;
+  padding-left: 15px;
+  position: relative;
+  left: 443px;
+
+}
+
+.session_actions {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  .login_btn {
+    display: inline-block;
+    border: 1px #3CCACE;
+    border-radius: 5px;
+    width: 350px;
+    height: 40px;
+    color: white;
+    background-color: #3CCACE;
+    font-size: 20px;
+    position: relative;
+    left: 443px;
+  }
+}
+
+.new_signin {
+  font-weight: bold;;
+  display: inline-block;
+  height: 40px;
+  background-color: white;
+  border:  solid 2px #3CCACE;
+  border-radius: 5px;
+  text-decoration: none;
+  width: 350px;
+  line-height: 2.5;
+  text-align: center;
+  margin-bottom: 15px;
+  margin-left: 443px;
+  .new_signin2 {
+    text-decoration: none;
+    color: #3CCACE;
+  }
+}
+.reset_password{
+  font-weight: bold;;
+  display: inline-block;
+  height: 40px;
+  background-color: white;
+  border:  solid 2px #3CCACE;
+  border-radius: 5px;
+  text-decoration: none;
+  width: 350px;
+  line-height: 2.5;
+  text-align: center;
+  margin-left: 443px;
+  margin-bottom: 70px;
+  .reset_password2{
+    text-decoration: none;
+    color: #3CCACE;
+  }
+}
