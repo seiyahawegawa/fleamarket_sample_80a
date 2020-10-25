@@ -1,7 +1,9 @@
-Rails.application.routes.draw do
+Rails.application.routes.draw do 
   root 'items#index'
+  resources :credit_cards, only: [:index, :new, :create, :show] 
+  resources :logouts, only: [:index]
   resources :categories, only: :index
-  resources :items, only: [:index, :show, :new, :edit, :create, :destroy] do
+  resources :items, only: [:index, :show, :new, :edit, :destroy, :create] do
     #Ajaxで動くアクションのルートを作成
     collection do
       get 'category_children', defaults: { format: 'json' }
@@ -9,5 +11,3 @@ Rails.application.routes.draw do
     end
   end
 end
-
-

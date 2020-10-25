@@ -37,7 +37,6 @@ $(function() {
     // console.log("ヤッター");
     // fileIndex.shift();
     // fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
-  
     var ImageContent = $(".image-content").length 
     console.log(ImageContent)
     var index = $(this).data("index")
