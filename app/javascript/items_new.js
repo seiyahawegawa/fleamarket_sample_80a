@@ -1,5 +1,4 @@
 $(function(){
- 
   // カテゴリーセレクトボックスのオプションを作成
   function categoryOption(category){
     var optionHtml = `<option value="${category.id}">${category.name}</option>`;
