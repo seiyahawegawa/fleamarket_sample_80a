@@ -1,5 +1,4 @@
 $(function(){
- 
   // カテゴリーセレクトボックスのオプションを作成
   function categoryOption(category){
     var optionHtml = `<option value="${category.id}">${category.name}</option>`;
@@ -8,6 +7,7 @@ $(function(){
   // 親カテゴリー選択後のイベント
   $('#category-select').on('change', function(){
      console.log("aaa")
+
     let parentCategoryId = $(this).val();
     console.log(parentCategoryId)
     //選択された親カテゴリーのIDを取得

@@ -11,7 +11,7 @@ class ItemsController < ApplicationController
   # 親カテゴリーが選択された後に動くアクション
   def category_children
     @category_children = Category.find(params[:parent_id]).children
-    
+
     #親カテゴリーに紐付く子カテゴリーを取得
   end
 
@@ -30,13 +30,9 @@ class ItemsController < ApplicationController
       render :new
     end
   end
-  
-
-
   private
 
   def item_params
-    
     params.require(:item).permit(:item_name,:item_description, :category_id, :conditon_id, :shopping_charges_id,:prefecture_id, :days_to_delivery_id, :price, item_images_attributes:[:image])
   end
   # .merge(user_id: current_user.id, boughtflg_id:"1")
