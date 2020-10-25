@@ -33,22 +33,14 @@ $(function() {
   }
   //ここの記述で、インプットボタンを押した時にイベントが起きる
   $(document).on('change', ".image", function(e){
-    // $(".image_group").append(image(fileIndex[0]));
-    // console.log("ヤッター");
-    // fileIndex.shift();
-    // fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
     var ImageContent = $(".image-content").length 
     console.log(ImageContent)
     var index = $(this).data("index")
-    // console.log(index)
+   
     index += 1;
-    // console.log(index)
     const file_field = filefield(index);
     const file = e.target.files[0];
     const blobUrl = window.URL.createObjectURL(file);
-    // $("#output-box").prepend(buildImg(index, blobUrl));
-    // $(".image_group").append(file_field)
-    // $('.sell-container__content__upload__items__box__label').attr("for", `item_item_images_attributes_${index}_image`);
     if (ImageContent<=3){
       $("#output-box").prepend(buildImg(index, blobUrl));
       $(".image_group").append(file_field)
