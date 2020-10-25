@@ -3,7 +3,6 @@ Rails.application.routes.draw do
     :registrations => 'users/registrations',
     :sessions => 'users/sessions'   
   } 
-    root 'items#index'
 
   devise_scope :user do
     get "sign_in", :to => "users/sessions#new"
@@ -11,8 +10,7 @@ Rails.application.routes.draw do
   # root 'items#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   end
-end
-Rails.application.routes.draw do 
+
   root 'items#index'
   resources :credit_cards, only: [:index, :new, :create, :show] 
   resources :logouts, only: [:index]

@@ -9,7 +9,7 @@
       font-weight: bold;
       padding-bottom: 10px;
       position: relative;
-      left: 430px;
+      left: 440px;
     }
     .registration__nickname input[type="text"],.registration__email input[type="email"],.registration__password input[type="password"],.password__confirmation input[type="password"] {
       width: 350px;
@@ -19,36 +19,45 @@
     .registration__name--contents {
       padding-bottom: 10px;
       position: relative;
-      left: 430px;
+      left: 440px;
       font-weight: bold;
       .contents-field__input  {
         height: 40px;
-        width: 175px;
+        width: 172px;
       }
     }
     .registration__namekana--contents{
      padding-bottom: 10px;
      position: relative;
-     left: 430px;
+     left: 440px;
      font-weight: bold;
       .contents-field__input  {
       height: 40px;
-      width: 175px;
+      width: 172px;
       }
     }
     .registration__birth--date {
       padding-bottom: 10px;
       position: relative;
-      left: 430px;
+      left: 440px;
       font-weight: bold;   
         #user_birth_date_1i{
         height: 40px;
+        width: 113px;
+        }
+        #user_birth_date_2i{
+        height: 40px;
+        width: 113px;
+        }
+        #user_birth_date_3i{
+        height: 40px;
+        width: 113px;
         }
     }
     .registration__introduction {
       padding-bottom: 10px;
       position: relative;
-      left: 430px;
+      left: 440px;
       font-weight: bold;
         .coments-field__input {
           height: 80px;
@@ -69,13 +78,13 @@
         display: inline-block;
         border: solid 1px #3CCACE;
         border-radius: 5px;
-        width: 370px;
+        width: 350px;
         height: 40px;
         color: white;
         background-color: #3CCACE;
         font-size: 20px;
         position: relative;
-        left: 430px;
+        left: 440px;
       }
     }
   }
@@ -87,10 +96,10 @@
   border:  solid 2px #3CCACE;
   border-radius: 5px;
   text-decoration: none;
-  width: 365px;
+  width: 350px;
   line-height: 2.5;
   text-align: center;
-  margin-left: 430px;
+  margin-left: 440px;
   margin-top: 15px;
   .relogin {
   text-decoration: none;
