@@ -1,0 +1,26 @@
+.Header-part
+  .Header-part__contents
+    .Header-part__contents__top
+      %h1.Header-part__contents__top__icon
+        = link_to "#", class: 'Header__contents__top__icon__logo' do
+          = image_tag "logo.png", alt: "logo", width: '140', class: 'Header__contents__top__icon__logo__img'
+      .Header-part__contents__top__search
+        %form.Header-part__contents__top__search__form
+          %input.Header-part__contents__top__search__form__box{"placeholder": "キーワードから探す", "type": "text"}
+          %button.Header-part__contents__top__search__form__btn
+            = image_tag 'icon-search 1.png', class: "Header-part__contents__top__search__form__btn__icon-image"
+    .Header-part__contents__menu
+      %ul.Header-part__contents__menu__left
+        %li.Header-part__contents__menu__left__list--first
+          = link_to "#", class: 'Header-part__contents__menu__left__list--first__btn' do
+            カテゴリー
+        %li.Header-part__contents__menu__left__list--second
+          = link_to "#", class: 'Header-part__contents__menu__left__list--second__btn' do
+            ブランド
+      %ul.Header-part__contents__menu__right
+        %li.Header-part__contents__menu__left__list--first
+          = link_to "/users/sign_in", class: 'Header-part__contents__menu__left__list--first__btn' do
+            ログイン
+        %li.Header-part__contents__menu__left__list--second
+          = link_to "/users/sign_up", class: 'Header-part__contents__menu__left__list--second__btn' do
+            新規会員登録
