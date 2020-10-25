@@ -63,6 +63,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 group :production do
   gem 'unicorn'
 end
+gem 'devise'
 gem 'font-awesome-sass'
 gem 'payjp'
 gem 'devise'
@@ -73,4 +74,3 @@ gem 'active_hash'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'rmagick'
-

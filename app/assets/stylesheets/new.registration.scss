@@ -1,0 +1,117 @@
+.new--registration {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 40px;
+}
+  .new_user {
+  
+    .registration__nickname, .registration__email, .registration__password, .password__confirmation {
+      font-weight: bold;
+      padding-bottom: 10px;
+      position: relative;
+      left: 440px;
+    }
+    .registration__nickname input[type="text"],.registration__email input[type="email"],.registration__password input[type="password"],.password__confirmation input[type="password"] {
+      width: 350px;
+      height: 40px;
+      padding-left: 15px;
+    }
+    .registration__name--contents {
+      padding-bottom: 10px;
+      position: relative;
+      left: 440px;
+      font-weight: bold;
+      .contents-field__input  {
+        height: 40px;
+        width: 172px;
+      }
+    }
+    .registration__namekana--contents{
+     padding-bottom: 10px;
+     position: relative;
+     left: 440px;
+     font-weight: bold;
+      .contents-field__input  {
+      height: 40px;
+      width: 172px;
+      }
+    }
+    .registration__birth--date {
+      padding-bottom: 10px;
+      position: relative;
+      left: 440px;
+      font-weight: bold;   
+        #user_birth_date_1i{
+        height: 40px;
+        width: 113px;
+        }
+        #user_birth_date_2i{
+        height: 40px;
+        width: 113px;
+        }
+        #user_birth_date_3i{
+        height: 40px;
+        width: 113px;
+        }
+    }
+    .registration__introduction {
+      padding-bottom: 10px;
+      position: relative;
+      left: 440px;
+      font-weight: bold;
+        .coments-field__input {
+          height: 80px;
+          width: 350px;
+        }
+        .option {
+          color: white;
+          border: solid 2px #3CCACE;
+          background-color: #3CCACE;
+          border-radius: 5px;
+
+        }
+    }
+  
+    .actions {
+      margin-top: 10px;
+      .signin--btn {
+        display: inline-block;
+        border: solid 1px #3CCACE;
+        border-radius: 5px;
+        width: 350px;
+        height: 40px;
+        color: white;
+        background-color: #3CCACE;
+        font-size: 20px;
+        position: relative;
+        left: 440px;
+      }
+    }
+  }
+.relogin1 {
+  font-weight: bold;;
+  display: inline-block;
+  height: 40px;
+  background-color: white;
+  border:  solid 2px #3CCACE;
+  border-radius: 5px;
+  text-decoration: none;
+  width: 350px;
+  line-height: 2.5;
+  text-align: center;
+  margin-left: 440px;
+  margin-top: 15px;
+  margin-bottom: 70px;
+  .relogin {
+  text-decoration: none;
+  color: #3CCACE;
+  }
+}
+.must {
+  color:white;
+  border: solid 2px red;
+  background-color: red;
+  border-radius: 5px;
+
+}
