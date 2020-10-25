@@ -6,10 +6,8 @@ $(function(){
   }
   // 親カテゴリー選択後のイベント
   $('#category-select').on('change', function(){
-     console.log("aaa")
 
     let parentCategoryId = $(this).val();
-    console.log(parentCategoryId)
     //選択された親カテゴリーのIDを取得
     if (parentCategoryId == ''){
       //親カテゴリーが空（初期値）の時
