@@ -34,9 +34,7 @@ $(function() {
   //ここの記述で、インプットボタンを押した時にイベントが起きる
   $(document).on('change', ".image", function(e){
     var ImageContent = $(".image-content").length 
-    console.log(ImageContent)
     var index = $(this).data("index")
-   
     index += 1;
     const file_field = filefield(index);
     const file = e.target.files[0];
@@ -50,19 +48,16 @@ $(function() {
     else if (ImageContent==4){
       $('#image-input').hide()
       $('#output-box').append(image(index))
-      console.log('ヤッター')
       $("#output-box").prepend(buildImg(index, blobUrl));
       $(".image_group").append(file_field)
       $('.sell-container__content__upload__items__box__label').attr("for", `item_item_images_attributes_${index}_image`);
       $(".drop-and-drag").text("")
-      console.log("やったー")
     } else if (ImageContent<=8){
       $("#output-box-secound").prepend(buildImg(index, blobUrl));
       $(".image_group").append(file_field)
       $('.sell-container__content__upload__items__box__label').attr("for", `item_item_images_attributes_${index}_image`);
       $(".drop-and-drag").text("")
     } else if (ImageContent ==9){
-      console.log('最高')
       $("#image-input-secound").hide()
       $("#output-box-secound").prepend(buildImg(index, blobUrl));
       $(".image_group").append(file_field)
