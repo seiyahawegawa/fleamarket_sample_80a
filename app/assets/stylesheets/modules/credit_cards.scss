@@ -1,0 +1,174 @@
+* {
+  box-sizing: border-box;
+}
+
+.Wrapper {
+  background-color: #f5f5f5;
+  width: 100%;
+  height: auto;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.Cardpage {
+  height: auto;
+  &__box {
+    width: 700px;
+    background-color: white;
+  }
+  &__choice {
+    height: 100px;
+    border-bottom: 1px solid whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    font-weight: 800;
+  }
+  &__registration-space {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+  }
+  &__btn {
+    height: 50px;
+    width: 450px;
+    background-color: red;
+    color: white;
+    font-weight: 800;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__btn:hover {
+    background-color: #dc143c;
+  }
+  &__serectspace {
+    color: white;
+  }   
+  a {
+    text-decoration: none;
+  }
+  .crediticon {
+    text-decoration: none;
+    color: white;
+  }
+}
+
+
+.Creditcreate {
+  width: 700px;
+  height: auto;
+  background-color: white;
+  &__title {
+    text-align: center;
+    height: 80px;
+    border-bottom: 1px solid gainsboro;
+  }
+}
+.Creditform {
+  padding-top: 50px;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  label {
+    font-size: 20px;
+    font-weight: 700;
+  }
+  span {
+    font-size: 15px;
+    background-color: red;
+    color: white;
+    font-weight: 700;
+  }
+}
+
+.Cardnumber-input {
+  height: 60px;
+  width: 400px;
+  border: 1px solid #cccccc;
+  margin: 10px 0;
+}
+
+.Creditslist {
+  display: flex;
+  justify-content: space-around;
+}
+
+.CreditIcon {
+ width: 40px;
+ height: 20px; 
+ margin-bottom: 30px;
+}
+
+.Creditform__datefield {
+}
+
+.dateSelect {
+  margin: 10px 0 30px 0;
+  width: 130px;
+  height: 50px;
+  border: 1px solid #cccccc;
+}
+
+.creditForm__securityfield { 
+  margin-bottom: 50px;
+}
+
+.securityInput {
+  margin-top: 10px;
+  height: 60px;
+  width: 400px;
+  border: 1px solid #cccccc;
+}
+
+.creditsSubmit {
+  height: 50px;
+  width: 450px;
+  background-color: red;
+  color: white;
+  font-weight: 800;
+}
+.creditsSubmit:hover {
+  background-color: #ff6347;
+}
+
+.Create {
+  height: auto;
+  &__frame {
+    width: 700px;
+    background-color: white;
+  }
+  &__frame-message {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    font-size: 30px;
+  }
+  &__frame-toppage {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  a {
+    text-decoration: none;
+  }
+  &__frame-topbtn {
+    width: 450px;
+    height: 50px;
+    color: white;
+    font-weight: 800;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__frame-topbtn:hover {
+    background-color: #dc143c;
+  }
+}
