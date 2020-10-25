@@ -22,14 +22,22 @@
                   %div#image-input
                     -# = f.label :images, for: "item_images0", class: 'sell-container__content__upload__items__box__label', data: {label_id: 0 } do 
                     -#   = f.file_field :images, multiple: true, class: "sell-container__content__upload__items__box__input", id: "item_images0", style: 'display: none;'
-                    .sell-container__content__upload__items__box__label             
-                      %div.image_group{data: {index:{id:0}}}
-                        = f.fields_for :item_images do |image| 
-                          = image.file_field :image,class:"image", data: {index: image.index}
-                      %pre
-                        %i.fas.fa-camera.fa-lg
-                        ドラッグアンドドロップ
-                        またはクリックしてファイルをアップロード
+                    = f.fields_for :item_images do |image| 
+                      -#  %label.sell-container__content__upload__items__box__label{for:"item_item_images_attributes_#{data:{image.index}}_image"}
+                      -#   %pre
+                      -#     %i.fas.fa-camera.fa-lg
+                      -#     ドラッグアンドドロップ
+                      -#     またはクリックしてファイルをアップロード                  
+                      %label.sell-container__content__upload__items__box__label{for:"item_item_images_attributes_0_image"} 
+                        %pre
+                          %i.fas.fa-camera.fa-lg
+                          %p.drop-and-drag
+                            ドラッグアンドドロップ
+                            またはクリックしてファイルをアップロード
+                      .image_group
+                        = image.file_field :image,class:"image", data: {index: image.index}
+                  
+                              
           .error-messages#error-image
 
         -#商品名部分
