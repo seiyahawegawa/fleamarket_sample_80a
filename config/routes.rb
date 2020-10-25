@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root 'items#index'
   resources :credit_cards, only: [:index, :new, :create, :show] 
   resources :logouts, only: [:index]
-  resources :categories, only: :index
+  resources :categories, only: [:index, :show]
   resources :items, only: [:index, :show, :new, :edit, :destroy] do
     #Ajaxで動くアクションのルートを作成
     collection do
