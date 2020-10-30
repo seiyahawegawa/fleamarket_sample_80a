@@ -132,62 +132,67 @@
         %h3.pickup_brand__head
           新規投稿商品
     .pickup_brand__containerBrand__product--lists
-      .pickup_brand__containerBrand__product--lists__list
-        = link_to "#" ,class: "image_tag" do
-          %figure.pickup_brand__product__images
-            = image_tag "image-01.jpg", class: "pickup_brand__product__images--image"
-        .pickup_brand__containerBrand__product--lists__list__body
-          %h3.pickup_brand__product--name
-            テスト
-          %ul.pickup_brand__details__menu
-            %li 10000円
-            %li
-              %i.fa.fa-star.likeIcon
-                1
-          %p.pickup_brand__taxIncluded
-            (税込)
-      .pickup_brand__containerBrand__product--lists__list
-        = link_to "#" ,class: "image_tag" do
-          %figure.pickup_brand__product__images
-            = image_tag "image-02.jpg", class: "pickup_brand__product__images--image"
-        .pickup_brand__containerBrand__product--lists__list__body
-          %h3.pickup_brand__product--name
-            eee
-          %ul.pickup_brand__details__menu
-            %li 2000円
-            %li
-              %i.fa.fa-star.likeIcon
-                2
-          %p.pickup_brand__taxIncluded
-            (税込)
-      .pickup_brand__containerBrand__product--lists__list
-        = link_to "#" ,class: "image_tag" do
-          %figure.pickup_brand__product__images
-            = image_tag "image-03.png", class: "pickup_brand__product__images--image"
-        .pickup_brand__containerBrand__product--lists__list__body
-          %h3.pickup_brand__product--name
-            product3
-          %ul.pickup_brand__details__menu
-            %li 30000円
-            %li
-              %i.fa.fa-star.likeIcon
-                1
-          %p.pickup_brand__taxIncluded
-            (税込)  
-      .pickup_brand__containerBrand__product--lists__list
-        = link_to "#" ,class: "image_tag" do
-          %figure.pickup_brand__product__images
-            = image_tag "image-04.png", class: "pickup_brand__product__images--image"
-        .pickup_brand__containerBrand__product--lists__list__body
-          %h3.pickup_brand__product--name
-            product2
-          %ul.pickup_brand__details__menu
-            %li 20000円
-            %li
-              %i.fa.fa-star.likeIcon
-                3
-          %p.pickup_brand__taxIncluded
-            (税込)      
+      - @item.each do |item|
+        .pickup_brand__containerBrand__product--lists__list
+          = link_to "#" ,class: "image_tag" do
+            %figure.pickup_brand__product__images
+              = image_tag item.item_images[0].image.url, class: "pickup_brand__product__images--image"
+          .pickup_brand__containerBrand__product--lists__list__body
+            %h3.pickup_brand__product--name
+              =item.item_name
+            %ul.pickup_brand__details__menu
+              %li 
+                = number_to_currency(item.price, format: "%u%n", unit: "￥",precision: 0)
+              %li
+                %i.fa.fa-star.likeIcon
+                  1
+            %p.pickup_brand__taxIncluded
+              (税込)
+            .items-box_photo__sold
+              .items-box_photo__sold__inner
+                SOLD  
+      -# .pickup_brand__containerBrand__product--lists__list
+      -#   = link_to "#" ,class: "image_tag" do
+      -#     %figure.pickup_brand__product__images
+      -#       = image_tag "image-02.jpg", class: "pickup_brand__product__images--image"
+      -#   .pickup_brand__containerBrand__product--lists__list__body
+      -#     %h3.pickup_brand__product--name
+      -#       eee
+      -#     %ul.pickup_brand__details__menu
+      -#       %li 2000円
+      -#       %li
+      -#         %i.fa.fa-star.likeIcon
+      -#           2
+      -#     %p.pickup_brand__taxIncluded
+      -#       (税込)
+      -# .pickup_brand__containerBrand__product--lists__list
+      -#   = link_to "#" ,class: "image_tag" do
+      -#     %figure.pickup_brand__product__images
+      -#       = image_tag "image-03.png", class: "pickup_brand__product__images--image"
+      -#   .pickup_brand__containerBrand__product--lists__list__body
+      -#     %h3.pickup_brand__product--name
+      -#       product3
+      -#     %ul.pickup_brand__details__menu
+      -#       %li 30000円
+      -#       %li
+      -#         %i.fa.fa-star.likeIcon
+      -#           1
+      -#     %p.pickup_brand__taxIncluded
+      -#       (税込)  
+      -# .pickup_brand__containerBrand__product--lists__list
+      -#   = link_to "#" ,class: "image_tag" do
+      -#     %figure.pickup_brand__product__images
+      -#       = image_tag "image-04.png", class: "pickup_brand__product__images--image"
+      -#   .pickup_brand__containerBrand__product--lists__list__body
+      -#     %h3.pickup_brand__product--name
+      -#       product2
+      -#     %ul.pickup_brand__details__menu
+      -#       %li 20000円
+      -#       %li
+      -#         %i.fa.fa-star.likeIcon
+      -#           3
+      -#     %p.pickup_brand__taxIncluded
+      -#       (税込)      
 
 .pickup_brand__containerBrand
   %h2.pickup_brand__containerBrand__title
