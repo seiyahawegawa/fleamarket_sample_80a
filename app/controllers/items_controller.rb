@@ -1,8 +1,9 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show,:destroy]
   def index
-    @item = Item.all
+    @items = Item.all
   end  
+  
   def new
     @item = Item.new
     @item.item_images.new
