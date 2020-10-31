@@ -2,8 +2,8 @@
   = render "users/sidemenu"
   .Logout
     .Logout__boxs
-      = link_to '#' do
-        .Logout__btns
+      .Logout__btns
+        = link_to destroy_user_session_path, method: :delete do
           ログアウト
       
         
