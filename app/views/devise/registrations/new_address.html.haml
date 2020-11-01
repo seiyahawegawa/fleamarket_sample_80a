@@ -1,42 +1,40 @@
 .Address
   .Address__box
-    .Address__title
-      %h3 商品送付先入力
+    .Address__item
+      .Address__title
+        商品送付先入力
     .Address__form
       .Address__form-set
         = form_with model: @address do |f|
           .Address__form-set__name
-            %span お名前（全角）
+            お名前（全角）
             %span.Form-require 必須
-          .Adress__form-set__fullname
-            .Adress__form-set__fullname-lastname
-              = f.text_field :lastname, placeholder: "例)山田"
-            .Adress__form-set__fullname-firstname
-              = f.text_field :firstname, placeholder: "例)太郎"
+          .Address__form-set__fullname
+            = f.text_field :lastname, class: "Address__form-set__fullname-lastname", placeholder: "例)山田"
+            = f.text_field :firstname, class: "Address__form-set__fullname-firstname", placeholder: "例)太郎"
           .Address__form-set__Kana
-            %span お名前カナ（全角）
+            お名前カナ（全角）
             %span.Form-require 必須
-          .Address__form-set__kana-lastname
-            = f.text_field :kana_lastname, placeholder: "例)ヤマダ"
-          .Address__form-set__kana-firstname
-            = f.text_field :kana_firstname, placeholder: "例)タロウ"
+          .Address__form-set__kanafull
+            = f.text_field :kana_lastname, class: "Address__form-set__kanafull-lastname", placeholder: "例)ヤマダ"
+            = f.text_field :kana_firstname, class: "Address__form-set__kanafull-firstname", placeholder: "例)タロウ"
           .Address__form-set__PostalCode
             %span.Form-require 必須
-          = f.text_field :PostalCode, placeholder: "都道府県"
+          = f.text_field :PostalCode, class: "Address__form-set__PostalCode-number", placeholder: "都道府県"
           .Address__form-set__municipality
             %span.Form-require 必須
-          = f.text_field :municipality, placeholder: "市区町村"
+          = f.text_field :municipality, class: "Address__form-set__municipality-name", placeholder: "市区町村"
           .Address__form-set__houseNumber
             %span.Form-require 必須
-          = f.text_field :housenumber, placeholder: "番地"
-          .Address__form-set__apartment-name
-          = f.text_field :apartment, placeholder: "マンション名やビル名"
-          .Address__form-set__room-number
-          = f.text_field :room, placeholder: "部屋番号"
-          .Address__form-set__phone-number
-          = f.text_field :phone, placeholder: "電話番号"
+          = f.text_field :housenumber, class: "Address__form-set__houseNumber-math",placeholder: "番地"
+          .Address__form-set__apartment
+            = f.text_field :apartment, class: "Address__form-set__apartment-name", placeholder: "マンション名やビル名"
+          .Address__form-set__room
+          = f.text_field :room, class: "Address__form-set__room-number", placeholder: "部屋番号"
+          .Address__form-set__phone
+          = f.text_field :phone, class: "Address__form-set__phone-number", placeholder: "電話番号"
           .Address__form-set__user-register
-          = f.submit "ユーザー登録"
+          = f.submit "ユーザー登録", class: "Address__form-set__user-register-btn"
 
           
 
