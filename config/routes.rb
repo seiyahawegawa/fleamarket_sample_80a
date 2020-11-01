@@ -21,5 +21,6 @@ Rails.application.routes.draw do
       get 'category_children', defaults: { format: 'json' }
       get 'category_grandchildren', defaults: { format: 'json' }
     end
+    resources :messages, only: [:create, :destroy, :new] 
   end
 end

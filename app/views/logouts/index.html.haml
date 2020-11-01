@@ -4,6 +4,7 @@
     .Logout__boxs
       = link_to '#' do
         .Logout__btns
-          ログアウト
+          = link_to destroy_user_session_path, method: :delete do
+            ログアウト
       
         

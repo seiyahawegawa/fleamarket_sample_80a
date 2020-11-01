@@ -11,6 +11,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @message =Message.new
   end  
   # 親カテゴリーが選択された後に動くアクション
   def category_children
@@ -49,7 +50,7 @@ class ItemsController < ApplicationController
   end
   # .merge(user_id: current_user.id, boughtflg_id:"1")
   def set_item 
-    @item = Item.find(params[:id])
+    @item = Item.includes(:messages).find(params[:id])
   end
 end
 

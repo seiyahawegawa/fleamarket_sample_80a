@@ -186,35 +186,99 @@
     background-color: #fff;
     .message-content{
       padding: 24px;
+      .message-self{
+        list-style-type: none;
+        .message__user{
+          .message__user--name{
+            float: right;
+            color: #ea352d;
+            margin-top: 25px;
+          }  
+        }
+        .message__body{
+          position: relative;
+          padding: 20px;
+          background-color: #fbf0e6;
+          margin-bottom: 2em;
+          margin-right: 1em;
+          width: 500px;
+          border-radius: 10px;
+        }
+        .message__body::before{
+          content: '';
+          position: absolute;
+          display: block;
+          width: 0;
+          height: 0;
+          right: -15px;
+          top: 20px;
+          border-left: 15px solid #fbf0e6;
+          border-top: 15px solid transparent;
+          border-bottom: 15px solid transparent;
+        }
+      }
+      .message-self-second{
+        list-style-type: none;
+        .message__user-second{
+          .message__user--name-second{
+            float: left;
+            color:  #1e90ff;
+            margin-top: 25px;
+          }  
+        }
+        .message__body-second{
+          position: relative;
+          padding: 20px;
+          background-color: #b3e5fc;
+          margin-bottom: 2em;
+          margin-left: 9.5em;
+          width: 500px;
+          border-radius: 10px;
+        }
+        .message__body-second::before{
+          content: '';
+          position: absolute;
+          display: block;
+          width: 0;
+          height: 0;
+          left: -15px;
+          top: 20px;
+          border-right: 15px solid #b3e5fc;
+          border-top: 15px solid transparent;
+          border-bottom: 15px solid transparent;
+        }
+      }
       .message-form{
         font-size: 14px;
         background: #fff6de; 
         padding: 8px;
       }  
-      .textarea{
-        display: block;
-        width: 97%;
-        max-width: 100%;
-        min-height: 104px;
-        padding: 10px;
-        border: 1px solid #ccc;
-        background: #fff;
-        font-size: 16px;
-        line-height: 1.5;
-        margin: 8px 0 0;
+      .massage-coment	{
+        .textarea{
+          display: block;
+          width: 100%;
+          max-width: 100%;
+          min-height: 104px;
+          padding: 10px;
+          border: 1px solid #ccc;
+          background: #fff;
+          font-size: 16px;
+          line-height: 1.5;
+          margin: 8px 0 0;
+          white-space: pre-wrap;
+        }
+        .message-submit{
+          width: 100%;
+          margin: 8px 0 0;
+          font-size: 14px;
+          text-align: center;
+          background: #aaa;
+          border: 1px solid #aaa;
+          line-height: 48px;
+          color: #fff;
+          border-radius: 4px;
+        }	
       }
-      .message-submit{
-        width: 100%;
-        margin: 8px 0 0;
-        font-size: 14px;
-        text-align: center;
-        background: #aaa;
-        border: 1px solid #aaa;
-        line-height: 48px;
-        color: #fff;
-        border-radius: 4px;
-      }	
-      
     }
   }
   .items-in-user-profile{
