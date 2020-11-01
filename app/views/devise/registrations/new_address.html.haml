@@ -28,9 +28,15 @@
           = f.text_field :municipality, placeholder: "市区町村"
           .Address__form-set__houseNumber
             %span.Form-require 必須
-          = f.text_field :houseNumber, placeholder: "番地"
-          
-
+          = f.text_field :housenumber, placeholder: "番地"
+          .Address__form-set__apartment-name
+          = f.text_field :apartment, placeholder: "マンション名やビル名"
+          .Address__form-set__room-number
+          = f.text_field :room, placeholder: "部屋番号"
+          .Address__form-set__phone-number
+          = f.text_field :phone, placeholder: "電話番号"
+          .Address__form-set__user-register
+          = f.submit "ユーザー登録"
 
           
 
