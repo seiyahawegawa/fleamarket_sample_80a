@@ -189,7 +189,7 @@
       .message-self{
         list-style-type: none;
         .message__user{
-          .message__user--name{
+          &--name{
             float: right;
             color: #ea352d;
             margin-top: 25px;
