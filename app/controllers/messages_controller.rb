@@ -1,7 +1,6 @@
 class MessagesController < ApplicationController
   before_action :set_item
   def new
-    # @message = Messages.new
   end
 
   def create

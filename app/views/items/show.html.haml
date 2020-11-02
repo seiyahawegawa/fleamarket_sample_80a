@@ -68,18 +68,19 @@
 				.optinal-btn
 					=icon('far','flag')
 					不適切な商品の通報		
-	.user-buy-edit-delete-box
-		.user-buy-edit-delete
-			- if user_signed_in? && current_user.id ==@item.user_id
-				= link_to "#",class: "edit-box" do
-					商品の編集
-				%span.or
-					or	
-				= link_to item_path(@item.id),method: :delete, class: "delete-box" do
-					この商品を削除する
-			- else
-				= link_to "#",class:"item-buy-btn" do
-					購入画面に進む		
+	- if user_signed_in? && current_user.id				
+		.user-buy-edit-delete-box
+			.user-buy-edit-delete
+				- if user_signed_in? && current_user.id ==@item.user_id
+					= link_to "#",class: "edit-box" do
+						商品の編集
+					%span.or
+						or	
+					= link_to item_path(@item.id),method: :delete, class: "delete-box" do
+						この商品を削除する
+				- else
+					= link_to "#",class:"item-buy-btn" do
+						購入画面に進む		
 	
 	.item-detail-message	
 		.message-content
