@@ -5,7 +5,7 @@
         商品送付先入力
     .Address__form
       .Address__form-set
-        = form_with model: @address do |f|
+        = form_with model: @address, local: true do |f|
           .Address__form-set__name
             お名前（全角）
             %span.Form-require 必須
