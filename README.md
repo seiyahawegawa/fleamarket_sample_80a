@@ -30,12 +30,18 @@ Things you may want to cover:
 |nickname|string|null: false|
 |email|string|null: false, foreign_key: true|
 |password|string|null: false|
+|first_name|string|null: false|
+|family_name|string|null: false|
+|first_name_kana|string|null: false|
+|family_name_kana|string|null: false|
+|birthday|date|null: false|
+|introduction|text||
 
 ### Association
-- has_one:profile
 - has_one:credit_card
 - has_many:purchases
 - has_many:items
+- has_many:messages
 
 ## itemsテーブル
 
@@ -46,12 +52,13 @@ Things you may want to cover:
 |item_description|text|null: false|
 |category_id|integer|null: false,uniqueness: true|
 |conditon_id|integer|null: false|
-|shipping_charges_id|integer|null: false|
+|shopping_charges_id|integer|null: false|
 |prefecture_id|integer|null: false|
 |days_to_delivery|integer|null: false|
 
 ### Association
 - has_many:item_images
+- has_many:messages
 - has_one:purchase
 - belongs_to:user
 - belongs_to_active_hash:category
@@ -59,21 +66,6 @@ Things you may want to cover:
 - belongs_to_active_hash:shipping_charges
 - belongs_to_active_hash:days_to_delivry
 - belongs_to_active_hash:prefecture
-
-## profilesテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|user|references|null: false,foregin_key: true|
-|first_name|string|null: false|
-|family_name|string|null: false|
-|first_name_kana|string|null: false|
-|family_name_kana|string|null: false|
-|birthday|date|null: false|
-|introduction|text||
-
-### Association
-- belonges_to:user
 
 ## credit_cardsテーブル
 
@@ -129,3 +121,14 @@ Things you may want to cover:
 - belonge_to:user
 - belonge_to:item
 
+## messages
+
+|Column|Type|Options|
+|------|----|-------|
+|user|references|null: false, foreign_key: true|
+|item|references|null: false, foreign_key: true|
+|introduction|text|null: false|
+
+### Association
+- belonge_to:user
+- belonge_to:item
