@@ -17,7 +17,6 @@
 			.item-price-box
 				%span.item-price
 					= number_to_currency(@item.price, format: "%u%n", unit: "￥",precision: 0)
-					-# = @item.price
 				%sane.item-tex
 					(税込)
 				%span.item-shipping-fee
@@ -81,7 +80,7 @@
 				- else
 					= link_to "#",class:"item-buy-btn" do
 						購入画面に進む		
-	
+
 	.item-detail-message	
 		.message-content
 			-if  @item.messages
