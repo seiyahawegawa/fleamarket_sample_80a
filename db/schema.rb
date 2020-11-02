@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2020_10_25_150143) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_addresses_on_user_id"
   end
+ActiveRecord::Schema.define(version: 2020_10_30_114431) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -66,6 +67,16 @@ ActiveRecord::Schema.define(version: 2020_10_25_150143) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "item_id"
+    t.bigint "user_id"
+    t.text "message", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["item_id"], name: "index_messages_on_item_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
     t.string "email", default: "", null: false
@@ -87,4 +98,6 @@ ActiveRecord::Schema.define(version: 2020_10_25_150143) do
 
   add_foreign_key "addresses", "users"
   add_foreign_key "item_images", "items"
+  add_foreign_key "messages", "items"
+  add_foreign_key "messages", "users"
 end
