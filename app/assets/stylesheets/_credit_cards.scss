@@ -66,6 +66,13 @@
     text-align: center;
     height: 80px;
     border-bottom: 1px solid gainsboro;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  h1 {
+    font-weight: 800;
+    font-size: 25px;
   }
 }
 .Creditform {
