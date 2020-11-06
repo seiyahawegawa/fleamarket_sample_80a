@@ -2,15 +2,10 @@ FactoryBot.define do
   factory :user do
     password = Faker::Internet.password(min_length: 7)
     nickname {"まーたろー"}
-    lastname {"真"} 
-    firstname {"太郎"}
-    lastname_kana {"ま"}
-    firstname_kana {"たろう"}
-    zipcode {"1111111"}
-    pref_id {"1"}
-    city {"青梅市"}
-    address {"1-2-3"}
-    buildingname {"マンション"}
+    family_name {"真"} 
+    first_name {"太郎"}
+    family_name_kana {"ま"}
+    first_name_kana {"たろう"}
     birthyear_id {"20"}
     birthmonth_id {"5"}
     birthday_id {"23"}
@@ -20,3 +15,4 @@ FactoryBot.define do
     password_confirmation {password}
   end
 end
+

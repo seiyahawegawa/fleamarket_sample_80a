@@ -8,7 +8,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :days_to_delivery
 
   validate :images_presence
-  validates :item_name, :item_description, :category_id, :condition_id, :shopping_charges_id, :prefecture_id, :days_to_delivery_id, :boughtflg_id,:user_id, presence: true
+  validates :item_name, :item_description, :category_id, :condition_id, :shopping_charges_id, :prefecture_id, :days_to_delivery_id, :user_id, presence: true
 
   validates :price, presence: true, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 }
 

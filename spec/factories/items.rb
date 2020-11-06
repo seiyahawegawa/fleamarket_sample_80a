@@ -2,13 +2,12 @@ FactoryBot.define do
   factory :item do
     item_name             {"hoge"}
     item_description             {Faker::Lorem.sentence}
-    condition_id     {1}
+    conditon_id     {1}
     shopping_charges_id  {1}
     prefecture_id          {13}
     days_to_delivery_id {1}
     price            {"9999"}
-    boughtflg_id     {1}
-
+   
     # アソシエーション
     user
     category
