@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   resources :logouts, only: [:index]
   resources :users, only: [:index]
   resources :categories, only: :index
-  resources :items, only: [:index, :show, :new, :edit, :destroy, :create] do
+  resources :items, only: [:index, :show, :new, :edit, :destroy, :create, :update] do
     #Ajaxで動くアクションのルートを作成
     collection do
       get 'category_children', defaults: { format: 'json' }

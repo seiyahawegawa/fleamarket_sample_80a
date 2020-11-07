@@ -18,12 +18,13 @@ $(function(){
       //子と孫を削除するする
     }else{
       $.ajax({
-        url: 'category_children',
+        url: '/items/category_children',
         type: 'GET',
         data: { parent_id: parentCategoryId },
         dataType: 'json'
       })
       .done(function(category_children){
+        // console.log(category_children)
         $('#select-children-box').remove();
         $('#select-grandchildren-box').remove();
         //親が変更された時、子と孫を削除するする
