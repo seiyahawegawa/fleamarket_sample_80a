@@ -39,6 +39,7 @@ group :development, :test do
   gem 'capistrano3-unicorn'
   gem 'capistrano-rails-console'
   gem 'rspec-rails'
+  gem 'factory_bot_rails'
 end
 
 group :development do
@@ -75,3 +76,4 @@ gem 'active_hash'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'rmagick'
+gem 'rails-i18n'

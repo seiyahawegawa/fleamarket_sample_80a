@@ -53,4 +53,3 @@ class ItemsController < ApplicationController
     @item = Item.includes(:messages).find(params[:id])
   end
 end
-
