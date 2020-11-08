@@ -11,9 +11,8 @@ FactoryBot.define do
     # アソシエーション
     user
     category
-
     # 1枚の画像をアップロードする
-    trait :item_image do
+    trait :item_images do
       after(:build) do |item|
         File.open("#{Rails.root}/spec/images/Unknown.jpeg") do |f|
           item.images.attach(io: f, filename: "Unknown.jpeg", content_type: 'image/jpeg')
@@ -22,7 +21,7 @@ FactoryBot.define do
     end
 
     # 11枚の画像をアップロードする
-    trait :images do
+    trait :item_images do
       after(:build) do |item|
         11.times do
           File.open("#{Rails.root}/spec/images/Unknown.jpeg") do |f|

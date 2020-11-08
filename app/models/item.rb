@@ -7,10 +7,15 @@ class Item < ApplicationRecord
   belongs_to_active_hash :shopping_charges
   belongs_to_active_hash :days_to_delivery
 
-  validate :images_presence
-  validates :item_name, :item_description, :category_id, :condition_id, :shopping_charges_id, :prefecture_id, :days_to_delivery_id, :user_id, presence: true
-
-  validates :price, presence: true, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 }
+  validate :item_images
+  validates :item_name, presence: true, length: { maximum: 40 }
+  validates :item_description, presence: true, length: { maximum: 1000 }
+  validates :category_id, presence: true
+  validates :conditon_id, presence: true
+  validates :shopping_charges_id, presence: true
+  validates :prefecture_id, presence: true
+  validates :days_to_delivery_id, presence: true
+  validates :price,presence: true,numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999}
 
   has_many :item_images
   accepts_nested_attributes_for :item_images, allow_destroy: true
@@ -19,12 +24,12 @@ class Item < ApplicationRecord
   
 
   def images_presence
-    if images.attached?
-      if images.length > 10
-        errors.add(:image, '10枚まで投稿できます')
+    if item_images.attached?
+      if item_images.length > 10
+        errors.add(:item_images, '10枚まで投稿できます')
       end
     else
-      errors.add(:image, '画像がありません')
+      errors.add(:item_images, '画像がありません')
     end
   end
   
