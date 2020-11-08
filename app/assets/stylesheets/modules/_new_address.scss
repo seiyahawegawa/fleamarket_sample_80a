@@ -1,0 +1,121 @@
+.Address {
+  background-color: #f5f5f5;
+  width: 100%;
+  height: auto;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  &__box {
+    height: auto;
+    width: 700px;
+    background-color: white;
+  }
+  &__item {
+    height: 50px;
+    border-bottom: 1px solid whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__title {
+    font-weight: 800;
+    font-size: 20px;
+  }
+  &__form {
+    margin: 30px 0;
+    padding: 0 100px;
+    display: flex;
+    justify-content: center;
+  }
+  &__form-set {
+  }
+  &__form-set__name {
+    font-weight: 600;
+  }
+  span {
+    background-color: red;
+    color: white;
+    font-weight: 600;
+  }
+  &__form-set__fullname {
+    display: flex;
+  }
+  &__form-set__fullname-lastname {
+    width: 200px;
+    height: 40px;
+    margin-bottom: 15px;
+  }
+  &__form-set__fullname-firstname {
+    width: 200px;
+    height: 40px;
+    margin-bottom: 15px;
+  }
+  &__form-set__Kana {
+    font-weight: 600;
+  }
+  &__form-set__kanafull {
+    display: flex;
+  }
+  &__form-set__kanafull-lastname {
+    width: 200px;
+    height: 40px;
+    margin-bottom: 15px;
+  }
+  &__form-set__kanafull-firstname {
+    width: 200px;
+    height: 40px;
+    margin-bottom: 15px;
+  }
+  &__form-set__PostalCode-number {
+    width: 400px;
+    height: 40px;
+    margin-bottom: 15px;
+  }
+  &__form-set__municipality-name {
+    width: 400px;
+    height: 40px;
+    margin-bottom: 15px;
+  }
+  &__form-set__houseNumber-math {
+    width: 400px;
+    height: 40px;
+    margin-bottom: 15px;
+  }
+  &__form-set__apartment{
+
+  }
+  &__form-set__apartment-name {
+    width: 400px;
+    height: 40px;
+    margin-bottom: 15px;
+  }
+  &__form-set__room {
+
+  }
+  &__form-set__room-number {
+    width: 400px;
+    height: 40px;
+    margin-bottom: 15px;
+  }
+  &____form-set__phone{
+
+  }
+  &__form-set__phone-number {
+    width: 400px;
+    height: 40px;
+    margin-bottom: 15px;
+  }
+  &__form-set__user-register {
+
+  }
+  &__form-set__user-register-btn {
+    background-color: red;
+    color: white;
+    font-weight: 800;
+    width: 400px;
+    height: 40px;
+  }
+  &__form-set__user-register-btn:hover {
+    background-color: #dc143c;
+  }
+}

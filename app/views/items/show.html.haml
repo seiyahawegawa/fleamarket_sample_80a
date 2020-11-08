@@ -1,5 +1,4 @@
-%header.hedear
-	メルカリヘッダー メンバーが作成中
+=render partial: "shared/header"
 .main	
 	.show-main
 		.item-box 
@@ -17,7 +16,6 @@
 			.item-price-box
 				%span.item-price
 					= number_to_currency(@item.price, format: "%u%n", unit: "￥",precision: 0)
-					-# = @item.price
 				%sane.item-tex
 					(税込)
 				%span.item-shipping-fee
@@ -68,29 +66,51 @@
 				.optinal-btn
 					=icon('far','flag')
 					不適切な商品の通報		
-	.user-buy-edit-delete-box
-		.user-buy-edit-delete
-			- if user_signed_in? && current_user.id ==@item.user_id
-				= link_to "#",class: "edit-box" do
-					商品の編集
-				%span.or
-					or	
-				= link_to item_path(@item.id),method: :delete, class: "delete-box" do
-					この商品を削除する
-			- else
-				= link_to "#",class:"item-buy-btn" do
-					購入画面に進む		
-	
+	- if user_signed_in? && current_user.id				
+		.user-buy-edit-delete-box
+			.user-buy-edit-delete
+				- if user_signed_in? && current_user.id ==@item.user_id
+					= link_to "#",class: "edit-box" do
+						商品の編集
+					%span.or
+						or	
+					= link_to item_path(@item.id),method: :delete, class: "delete-box" do
+						この商品を削除する
+				- else
+					= link_to "#",class:"item-buy-btn" do
+						購入画面に進む		
+
 	.item-detail-message	
 		.message-content
+			-if  @item.messages
+				- @item.messages.each do |message|
+					-if message.user_id == @item.user_id
+						%li.message-self
+							%ul.message__user
+								.message__user--name
+									=message.user.nickname
+							%ul.message__body
+								.message__body--text
+									=message.message
+								.message-icon-left
+								.message-icon-right	
+					-else 
+						%li.message-self-second
+							%ul.message__user-second
+								.message__user--name-second
+									=message.user.nickname
+							%ul.message__body-second
+								.message__body--text-second
+									=message.message					
+
 			.message-form
 				%a
 					相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
-			.massage-coment		
-				%textarea.textarea
-			.message-submit	
-				%sapan
-					コメントする	
+			.massage-coment	
+				- if current_user
+					= form_with model:[@item,@message], local: true do |f|	
+						= f.text_area :message,class:"textarea",rows: 7
+						= f.submit'コメントする	',class:"message-submit"	
 
 	.items-in-user-profile
 		.items-box-head
@@ -105,3 +125,5 @@
 				.items-box-num
 					.items-box-price
 						¥1,200	
+
+=render partial: "shared/footer"
