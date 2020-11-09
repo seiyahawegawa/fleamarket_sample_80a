@@ -30,6 +30,23 @@ ActiveRecord::Schema.define(version: 2020_10_25_150143) do
   end
 ActiveRecord::Schema.define(version: 2020_10_30_114431) do
 
+  create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "address_first_name", null: false
+    t.string "address_family_name", null: false
+    t.string "address_first_name_kana", null: false
+    t.string "address_family_name_kana", null: false
+    t.string "post_code", null: false
+    t.string "prefecture_id", null: false
+    t.date "city", null: false
+    t.string "address_line", null: false
+    t.string "building_name"
+    t.integer "phone_number", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_addresses_on_user_id"
+  end
+
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false

@@ -92,16 +92,20 @@
 							%ul.message__body
 								.message__body--text
 									=message.message
-								.message-icon-left
-								.message-icon-right	
-					-else 
+								.message-icon
+									=link_to "#" do
+										= icon('fas','trash-alt')
+					-	else 
 						%li.message-self-second
 							%ul.message__user-second
 								.message__user--name-second
 									=message.user.nickname
 							%ul.message__body-second
 								.message__body--text-second
-									=message.message					
+									=message.message	
+								.message-icon-secound
+									=link_to "#" do
+										= icon('fas','trash-alt')					
 
 			.message-form
 				%a
