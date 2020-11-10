@@ -4,7 +4,30 @@
     .Create__frame
       .Create__frame-message
         登録が完了しました
+      
+      .Create__card-details
+        .Credit__card-details_information
+          登録クレジットカード情報
+        .Credit__card-details_left
+          .Credit__card-details_left_brand
+            -# - if @card_brand == "amex"
+            -#   = image_tag('images/#{@card_src}', alt: @card_brand, height: '46', width: '46', class: 'card_image')
+            -# - else
+            -#   = image_tag('images/#{@card_src}', alt: @card_brand, height: '33', width: '46', class: 'card_image')
+          .Credit__card-details_left_number
+            -# = "**** **** **** " + @default_card_information.last4
+          .Credit__card-details_left_deadline
+            -# - exp_month = @default_card_information.exp_month.to_s
+            -# - exp_year = @default_card_information.exp_year.to_s
+            -# = exp_month + " / " + exp_year
+        .Credit__card-details_right
+          .Credit__card-details_right_delete
+            
       .Create__frame-toppage
-        = link_to credit_cards_path do
-          .Create__frame-topbtn
-            トップページ画面へ
+        /= link_to root_path(current_user.id) do
+        .Create__frame-topbtn
+          トップページ画面へ
+      
+        
+      
+      

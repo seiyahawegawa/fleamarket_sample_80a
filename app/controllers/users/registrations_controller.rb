@@ -74,5 +74,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @address = @user.build_address
     render :new_address
   end
+
+  def create_address
+    
+  end
   
 end
