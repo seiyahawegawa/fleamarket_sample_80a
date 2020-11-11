@@ -1,0 +1,13 @@
+=render "shared/header"
+.Complete
+  .Complete__box
+    .Complete__item
+      .Complete__title
+        ユーザー登録が完了しました
+    .Complete__form
+      .Complete__form-set__create-creditcard
+        = link_to "クレジットカード登録", new_credit_card_path, class: "Complete__form-set__create-creditcard-btn"
+      .Complete__form-set__mypage
+        = link_to "マイページ", users_path, class: "Complete__form-set__mypage-btn"
+
+=render "shared/footer"

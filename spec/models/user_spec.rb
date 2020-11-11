@@ -1,9 +1,7 @@
 require 'rails_helper'
 describe User do
   describe '#create' do
-     #user = User.new(nickname: "", email: "kkk@gmail.com", password: "00000000", password_confirmation: "00000000")
-     #user.valid?
-     #expect(user.errors.full_messages).to include("Nicknameを入力してください")
+
     it "全ての項目の入力が存在すれば登録できること" do
       user = build(:user)
       expect(user).to be_valid
@@ -120,6 +118,73 @@ describe User do
       user = build(:user, first_name_kana: "あいうえお")
       user.valid?
       expect(user.errors[:first_name_kana]).to include("は不正な値です")
+    end
+  end
+end
+
+describe Address do
+  describe '#create' do
+ 
+    # 1
+    it "address_family_nameがない場合は登録できないこと" do
+      address = build(:address, address_family_name: nil)
+      address.valid?
+      expect(address.errors[:address_family_name]).to include("を入力してください")
+    end
+ 
+    # 2
+    it "address_first_nameがない場合は登録できないこと" do
+      address = build(:address, address_first_name: nil)
+      address.valid?
+      expect(address.errors[:address_first_name]).to include("を入力してください")
+    end
+ 
+    # 3
+    it "address_family_name_kanaがない場合は登録できないこと" do
+      address = build(:address, address_family_name_kana: nil)
+      address.valid?
+      expect(address.errors[:address_family_name_kana]).to include("を入力してください")
+    end
+ 
+    # 4
+    it "address_first_name_kanaがない場合は登録できないこと" do
+      address = build(:address, address_first_name_kana: nil)
+      address.valid?
+      expect(address.errors[:address_first_name_kana]).to include("を入力してください")
+    end
+ 
+    # 5
+    it "post_codeがない場合は登録できないこと" do
+      address = build(:address, post_code: nil)
+      address.valid?
+      expect(address.errors[:post_code]).to include("を入力してください")
+    end
+ 
+    # 6
+    it "prefecture_idがない場合は登録できないこと" do
+      address = build(:address, prefecture_id: nil)
+      address.valid?
+      expect(address.errors[:prefecture_id]).to include("を入力してください")
+    end
+ 
+    # 7
+    it "cityがない場合は登録できないこと" do
+      address = build(:address, city: nil)
+      address.valid?
+      expect(address.errors[:city]).to include("を入力してください")
+    end
+ 
+    # 8
+    it "address_lineがない場合は登録できないこと" do
+      address = build(:address, address_line: nil)
+      address.valid?
+      expect(address.errors[:address_line]).to include("を入力してください")
+    end
+ 
+    # 9
+    it "address_family_name、address_first_name、address_family_name_kana、address_first_name_kana、post_code、prefecture_id、city、address_line全てが存在すれば登録できること" do
+      address = build(:address)
+      expect(address).to be_valid
     end
   end
 end
