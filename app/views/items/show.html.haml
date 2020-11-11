@@ -93,7 +93,7 @@
 								.message__body--text
 									=message.message
 								.message-icon
-									=link_to "#" do
+									=link_to item_message_path(message.id),method: :delete do
 										= icon('fas','trash-alt')
 					-	else 
 						%li.message-self-second
@@ -104,7 +104,7 @@
 								.message__body--text-second
 									=message.message	
 								.message-icon-secound
-									=link_to "#" do
+									=link_to item_message_path(message.id),method: :delete do
 										= icon('fas','trash-alt')					
 
 			.message-form
