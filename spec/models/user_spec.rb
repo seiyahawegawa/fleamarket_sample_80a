@@ -182,7 +182,7 @@ describe Address do
     end
  
     # 9
-    it "address_family_name、address_first_name、address_family_name_kana、address_first_name_kana、post_code、prefecture_id、city、address_line全てが存在すれば登録できること" do
+    it "全ての項目が存在すれば登録できること" do
       address = build(:address)
       expect(address).to be_valid
     end
