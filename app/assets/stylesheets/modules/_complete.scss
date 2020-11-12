@@ -1,0 +1,47 @@
+.Complete {
+  background-color: #f5f5f5;
+  width: 100%;
+  height: auto;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  &__box {
+    height: auto;
+    width: 700px;
+    background-color: white;
+  }
+  &__item {
+    height: 50px;
+    border-bottom: 1px solid whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+    &__title {
+      font-weight: bold;
+      font-size: 20px;
+    }
+  &__form {
+    font-size: 20px;
+    height: 200px;
+  }
+  &__form-set__create-creditcard{
+    margin-top: 50px;
+  }
+  &__form-set__create-creditcard-btn {
+    border: solid 2px #3CCACE;
+    color: white;
+    background-color: #3CCACE;
+    height: 40px;
+    width: 400px;
+  }
+  &__form-set__mypage-btn {
+    border: solid 2px #3CCACE;
+    color: white;
+    background-color: #3CCACE;
+    height: 40px;
+    width: 400px;
+  }
+}
+  

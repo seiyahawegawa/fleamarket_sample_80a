@@ -33,20 +33,23 @@
     font-weight: 600;
   }
   span {
+    color:white;
+    border: solid 2px red;
     background-color: red;
-    color: white;
+    border-radius: 5px;
     font-weight: 600;
   }
   &__form-set__fullname {
     display: flex;
   }
   &__form-set__fullname-lastname {
-    width: 200px;
+    width: 195px;
     height: 40px;
     margin-bottom: 15px;
+    margin-right: 10px;
   }
   &__form-set__fullname-firstname {
-    width: 200px;
+    width: 195px;
     height: 40px;
     margin-bottom: 15px;
   }
@@ -57,16 +60,22 @@
     display: flex;
   }
   &__form-set__kanafull-lastname {
-    width: 200px;
+    width: 195px;
     height: 40px;
     margin-bottom: 15px;
+    margin-right: 10px;
   }
   &__form-set__kanafull-firstname {
-    width: 200px;
+    width: 195px;
     height: 40px;
     margin-bottom: 15px;
   }
   &__form-set__PostalCode-number {
+    width: 400px;
+    height: 40px;
+    margin-bottom: 15px;
+  }
+  &__form-set__Prefecture {
     width: 400px;
     height: 40px;
     margin-bottom: 15px;
@@ -89,9 +98,9 @@
     height: 40px;
     margin-bottom: 15px;
   }
-  &__form-set__room {
+  //&__form-set__room {
 
-  }
+  //}
   &__form-set__room-number {
     width: 400px;
     height: 40px;
@@ -109,7 +118,8 @@
 
   }
   &__form-set__user-register-btn {
-    background-color: red;
+    background-color: #3CCACE;  
+    border: solid 1px #3CCACE;
     color: white;
     font-weight: 800;
     width: 400px;
@@ -117,5 +127,11 @@
   }
   &__form-set__user-register-btn:hover {
     background-color: #dc143c;
+  }
+  .option {
+    color: white;
+    border: solid 2px #3CCACE;
+    background-color: #3CCACE;
+    border-radius: 5px;
   }
 }

@@ -10,17 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_25_150143) do
+ActiveRecord::Schema.define(version: 2020_10_30_114431) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.string "address_first_name", null: false
     t.string "address_family_name", null: false
-    t.string "address_first_name_kana", null: false
+    t.string "address_first_name", null: false
     t.string "address_family_name_kana", null: false
+    t.string "address_first_name_kana", null: false
     t.string "post_code", null: false
     t.string "prefecture_id", null: false
-    t.date "city", null: false
+    t.string "city", null: false
     t.string "address_line", null: false
     t.string "building_name"
     t.integer "phone_number", null: false
@@ -28,7 +28,6 @@ ActiveRecord::Schema.define(version: 2020_10_25_150143) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_addresses_on_user_id"
   end
-ActiveRecord::Schema.define(version: 2020_10_30_114431) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -71,15 +70,6 @@ ActiveRecord::Schema.define(version: 2020_10_30_114431) do
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "user_id"
-    t.string "item_name", null: false
-    t.text "item_description", null: false
-    t.integer "category_id", null: false
-    t.integer "conditon_id", null: false
-    t.integer "shopping_charges_id", null: false
-    t.integer "prefecture_id", null: false
-    t.integer "days_to_delivery_id", null: false
-    t.integer "price", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
