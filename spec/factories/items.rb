@@ -7,28 +7,11 @@ FactoryBot.define do
     prefecture_id          {13}
     days_to_delivery_id {1}
     price            {"9999"}
-   
     # アソシエーション
     user
     category
-    # 1枚の画像をアップロードする
-    trait :item_images do
-      after(:build) do |item|
-        File.open("#{Rails.root}/spec/images/Unknown.jpeg") do |f|
-          item.images.attach(io: f, filename: "Unknown.jpeg", content_type: 'image/jpeg')
-        end
-      end
-    end
-
-    # 11枚の画像をアップロードする
-    trait :item_images do
-      after(:build) do |item|
-        11.times do
-          File.open("#{Rails.root}/spec/images/Unknown.jpeg") do |f|
-            item.images.attach(io: f, filename: "Unknown.jpeg", content_type: 'image/jpeg')
-          end
-        end
-      end
-    end
+    after(:build) do |item|
+      item.item_images << FactoryBot.build(:item_image, item: item)
+    end  
   end
 end

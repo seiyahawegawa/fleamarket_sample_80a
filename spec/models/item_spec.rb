@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-describe Item do
+RSpec.describe Item, type: :model do
   before do 
-    category = FactoryBot.create(:category)
-    @item = FactoryBot.build(:item, category_id: category.id)
+    @category = FactoryBot.create(:category)
+    @item = FactoryBot.build(:item, category_id: @category.id )
   end
 
   describe "#create" do
@@ -117,15 +117,21 @@ describe Item do
       @item.valid?
       expect(@item.errors[:category_id]).to include("can't be blank")
     end
-    it '画像がない'do
-      @item.item_images = ""
-      @item.valid?
-      expect(item.errors[:image]).to include('画像がありません')
-      end
-    it '画像が多い'do
-      @item = build(:item, :images, user: user, category: category)
-      @item.valid?
-      expect(item.errors[:image]).to include('10枚まで投稿できます')
-    end
   end
+
+    context '保存できない' do
+      it '画像がない'do
+        @item.item_images = []
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Item images can't be blank")
+      end
+      it '画像が多い'do
+        item =  FactoryBot.build(:item, category_id: @category.id )
+        11.times do
+          item.item_images << FactoryBot.build(:item_image)
+        end
+        item.valid?
+        expect(item.errors.full_messages).to include("Item images is too long (maximum is 10 characters)")
+      end
+    end
 end
