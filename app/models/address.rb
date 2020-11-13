@@ -24,9 +24,9 @@ class Address < ApplicationRecord
     presence: true
   validates :city,
     format: { with: /\A([ぁ-んァ-ン一-龥]|ー)+\z/},
-    presence: true 
+    presence: true
   validates :address_line,
-    format: { with: /\A([ぁ-んァ-ン一-龥]|ー)+\z/},
+    format: { with: /\A([ぁ-んァ-ン一-龥a-zA-Z\d{4}[-]\d{3}[-]\d{3}]|ー)+\z/},
     presence: true
   validates :building_name,
     format: { with: /\A([ぁ-んァ-ン一-龥]|ー)+\z/},
