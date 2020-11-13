@@ -26,36 +26,7 @@ class User < ApplicationRecord
     presence: true
   validates :birth_date,
     presence: true
-  validates :address_family_name,
-    format: { with: /\A([ぁ-んァ-ン一-龥]|ー)+\z/},
-    presence: true
-  validates :address_first_name,
-    format: { with: /\A([ぁ-んァ-ン一-龥]|ー)+\z/},
-    presence: true
-  validates :address_family_name_kana,
-    format: { with: /\A[ァ-ヶー－]+\z/},
-    presence: true
-  validates :address_first_name_kana,
-    format: { with: /\A[ァ-ヶー－]+\z/},
-    presence: true
-  validates :post_code,
-    format: { with: /\A\d{3}\-?\d{4}\z/},
-    presence: true
-  validates :prefecture_id,
-    format: { with: /\A([ぁ-んァ-ン一-龥]|ー)+\z/},
-    presence: true
-  validates :city,
-    format: { with: /\A([ぁ-んァ-ン一-龥]|ー)+\z/},
-    presence: true 
-  validates :address_line,
-    format: { with: /\A([ぁ-んァ-ン一-龥]|ー)+\z/},
-    presence: true
-  validates :building_name,
-    format: { with: /\A([ぁ-んァ-ン一-龥]|ー)+\z/},
-    allow_blank: true
-  validates :phone_number,
-    format: { with: /\A\d{10}$|^\d{11}\z/},
-    allow_blank: true
+
   has_many :messages
   has_one :profile
   accepts_nested_attributes_for :profile
