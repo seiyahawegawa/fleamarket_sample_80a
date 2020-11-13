@@ -17,7 +17,7 @@ class Address < ApplicationRecord
     format: { with: /\A[ァ-ヶー－]+\z/},
     presence: true
   validates :post_code,
-    format: { with: /\A\d{3}\-?\d{4}\z/},
+    format: { with: /\A\d{7}\z/},
     presence: true
   validates :prefecture_id,
     format: { with: /\A([ぁ-んァ-ン一-龥]|ー)+\z/},
@@ -26,10 +26,10 @@ class Address < ApplicationRecord
     format: { with: /\A([ぁ-んァ-ン一-龥]|ー)+\z/},
     presence: true
   validates :address_line,
-    format: { with: /\A([ぁ-んァ-ン一-龥a-zA-Z\d{4}[-]\d{3}[-]\d{3}]|ー)+\z/},
+    format: { with: /\A([ぁ-んァ-ン一-龥a-zA-Z０-９\D{4}[-]\D{1}[-]\D{1}]|ー)+\z/},
     presence: true
   validates :building_name,
-    format: { with: /\A([ぁ-んァ-ン一-龥]|ー)+\z/},
+    format: { with: /\A([ぁ-んァ-ン一-龥0-9０-９]|ー)+\z/},
     allow_blank: true
   validates :phone_number,
     format: { with: /\A\d{10}$|^\d{11}\z/},

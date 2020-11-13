@@ -26,6 +26,7 @@
     padding: 0 100px;
     display: flex;
     justify-content: center;
+    text-align: center;
   }
   &__form-set {
   }
@@ -70,20 +71,32 @@
     height: 40px;
     margin-bottom: 15px;
   }
+  &__form-set__PostalCode {
+    font-weight: bold;
+  }
   &__form-set__PostalCode-number {
     width: 400px;
     height: 40px;
     margin-bottom: 15px;
+  }
+  &__form-set__Prefecture_id {
+    font-weight: bold;
   }
   &__form-set__Prefecture {
     width: 400px;
     height: 40px;
     margin-bottom: 15px;
   }
+  &__form-set__municipality {
+    font-weight: bold;
+  }
   &__form-set__municipality-name {
     width: 400px;
     height: 40px;
     margin-bottom: 15px;
+  }
+  &__form-set__houseNumber{
+    font-weight: bold;
   }
   &__form-set__houseNumber-math {
     width: 400px;
@@ -98,9 +111,9 @@
     height: 40px;
     margin-bottom: 15px;
   }
-  //&__form-set__room {
-
-  //}
+  &__form-set__phone {
+    font-weight: bold;
+  }
   &__form-set__room-number {
     width: 400px;
     height: 40px;
