@@ -18,9 +18,12 @@
           = link_to "#", class: 'Header-part__contents__menu__left__list--second__btn' do
             ブランド
       %ul.Header-part__contents__menu__right
-        %li.Header-part__contents__menu__left__list--first
-          = link_to "/users/sign_in", class: 'Header-part__contents__menu__left__list--first__btn' do
-            ログイン
-        %li.Header-part__contents__menu__left__list--second
-          = link_to "/users/sign_up", class: 'Header-part__contents__menu__left__list--second__btn' do
-            新規会員登録
+        -if user_signed_in?
+          = link_to "マイページ", users_path, class: 'Header-part__contents__menu__right'
+        -else
+          %li.Header-part__contents__menu__left__list--first
+            = link_to "/users/sign_in", class: 'Header-part__contents__menu__left__list--first__btn' do
+              ログイン
+          %li.Header-part__contents__menu__left__list--second
+            = link_to "/users/sign_up", class: 'Header-part__contents__menu__left__list--second__btn' do
+              新規会員登録

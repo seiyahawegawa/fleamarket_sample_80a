@@ -310,13 +310,14 @@
       }
     }
     &--lists{
-      width: 780px;
-      margin: 26px auto;
+      width: 100%;
+      margin: 0px auto;
       display: flex;
-      justify-content: space-around;
+      flex-wrap: wrap;
       &__list{
         display: inline-block;
-        width: 220px;
+        margin-top: 20px;
+        width: 20%;
         float: left;
         .image_tag{
           background-color: #fff;
@@ -330,6 +331,7 @@
             overflow: hidden;
             margin: 0;
             z-index: auto;
+            width: 222px;
             &--image{
               position: absolute;
               top: 0;
@@ -346,7 +348,8 @@
         &__body{
           background-color: white;
           color: black;
-          padding: 16px;
+          margin: -5px 19px;
+          height: 100px;
           .pickup_brand__product--name{
             overflow: hidden;
             line-height: 1.5;
@@ -364,6 +367,25 @@
           .pickup_brand__taxIncluded{
             font-size: 10px;
             text-align: left;
+          }
+          .items-box_photo__sold{
+            width: 0;
+            height: 0;
+            border-top: 60px solid #ea352d ;
+            border-right: 60px solid transparent;
+            border-bottom: 60px solid transparent;
+            border-left: 60px solid #ea352d ;
+            z-index:100;
+            position: relative;
+            top:-214px;
+            &__inner{
+              transform: rotate(-45deg);
+              font-size: 28px;
+              margin:-35px 0px 0px -55px;
+              color: #fff;
+              letter-spacing: 2px;
+              font-weight: 600;
+            }
           }
         }
       }

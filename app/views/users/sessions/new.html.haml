@@ -1,20 +1,22 @@
 =render "shared/header"
-.new_session
-  %p 会員ログイン
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .session_email
-
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Eメール"
-  .password_field3
-
-    %br/
-    = f.password_field :password, autocomplete: "current-password", placeholder: "パスワード"
-  - if devise_mapping.rememberable?
-    .password_field4
-      = f.check_box :remember_me
-      = f.label :remember_me, "ログイン状態を保存する"
-  .session_actions
-    = f.submit "ログインする", class: 'login_btn'
-= render "users/shared/links"
+.Session
+  .Session_box
+    .new_session
+      %p 会員ログイン
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .session_email
+        メールアドレス
+        %br/
+        = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス"
+      .password_field3
+        パスワード
+        %br/
+        = f.password_field :password, autocomplete: "current-password", placeholder: "パスワード"
+      - if devise_mapping.rememberable?
+        -# .password_field4
+        -#   = f.check_box :remember_me
+        -#   = f.label :remember_me, "ログイン状態を保存する" 
+      .session_actions
+        = f.submit "ログインする", class: 'login_btn'
+//= render "users/shared/links"
 =render "shared/footer"
