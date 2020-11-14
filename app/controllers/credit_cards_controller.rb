@@ -25,7 +25,6 @@ class CreditCardsController < ApplicationController
       end
     end
   end
-
   
 
   

@@ -33,4 +33,8 @@ Rails.application.routes.draw do
     end
     resources :messages, only: [:create, :destroy, :new] 
   end
+
+  resources :buys, only: [:index]
+    
+
 end
