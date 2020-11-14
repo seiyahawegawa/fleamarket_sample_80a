@@ -1,0 +1,86 @@
+.Session {
+  background-color: #f5f5f5;
+  width: 100%;
+  height: auto;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  &__box {
+    height: auto;
+    width: 700px;
+    background-color: white;
+    padding-bottom: 40px;
+  }
+}
+.new_session {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 800;
+  background-color: white;
+  height: 50px;
+  padding-top: 10px;
+  border-bottom: 1px solid whitesmoke;
+}
+.session_email{
+  font-weight: bolder;
+}
+.session_email input[type="email"],.password_field3 input[type="password"],.password_field4 {
+  width: 350px;
+  height: 40px;
+  padding-left: 15px;
+  font-weight: bolder;
+}
+.password_field3 {
+  justify-content: center;
+  font-weight: bolder;
+}
+.session_actions {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  .login_btn {
+    display: inline-block;
+    border: 1px #3CCACE;
+    border-radius: 5px;
+    width: 350px;
+    height: 40px;
+    color: white;
+    background-color: #3CCACE;
+    font-size: 20px;
+  }
+}
+
+.new_signin {
+  font-weight: bold;;
+  display: inline-block;
+  height: 40px;
+  background-color: white;
+  border:  solid 2px #3CCACE;
+  border-radius: 5px;
+  text-decoration: none;
+  width: 350px;
+  line-height: 2.5;
+  text-align: center;
+  margin-bottom: 15px;
+
+  .new_signin2 {
+    text-decoration: none;
+    color: #3CCACE;
+  }
+}
+// .reset_password{
+//   font-weight: bold;;
+//   display: inline-block;
+//   height: 40px;
+//   background-color: white;
+//   border:  solid 2px #3CCACE;
+//   border-radius: 5px;
+//   text-decoration: none;
+//   width: 350px;
+//   line-height: 2.5;
+//   text-align: center;
+//   margin-bottom: 70px;
+//   .reset_password2{
+//     text-decoration: none;
+//     color: #3CCACE;
+//   }
+// }
