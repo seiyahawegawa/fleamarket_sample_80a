@@ -1,6 +1,6 @@
 class Item < ApplicationRecord
 
- 
+  belongs_to :category
   belongs_to :user
   has_many :item_images,dependent: :destroy
   has_many :messages, dependent: :destroy
@@ -15,7 +15,7 @@ class Item < ApplicationRecord
   validates :item_images, presence: true, length: { maximum: 10 }
   validates :item_name, presence: true, length: { maximum: 40 }
   validates :item_description, presence: true, length: { maximum: 1000 }
-
+  validates :category_id, presence: true
   validates :conditon_id, presence: true
   validates :shopping_charges_id, presence: true
   validates :prefecture_id, presence: true
@@ -25,6 +25,6 @@ class Item < ApplicationRecord
   has_many :item_images
   accepts_nested_attributes_for :item_images, allow_destroy: true
   belongs_to :user, foreign_key: 'user_id'
-  
+  belongs_to :category
   
 end
