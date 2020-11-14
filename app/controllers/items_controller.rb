@@ -27,7 +27,6 @@ class ItemsController < ApplicationController
       redirect_to root_path
 
     else
-      # @item.item_images.new
       @category_parent =  Category.where("ancestry is null")
       render :new
     end
