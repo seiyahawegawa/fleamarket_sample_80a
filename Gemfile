@@ -43,7 +43,7 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'factory_bot_rails'
   gem 'faker'
-  gem 'rspec-rails'
+  # gem 'rspec-rails'
   gem 'factory_bot_rails'
 
 end
