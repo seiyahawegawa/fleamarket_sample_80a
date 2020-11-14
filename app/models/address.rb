@@ -23,7 +23,7 @@ class Address < ApplicationRecord
     format: { with: /\A([ぁ-んァ-ン一-龥]|ー)+\z/},
     presence: true
   validates :address_line,
-    format: { with: /\A([ぁ-んァ-ン一-龥a-zA-Z０-９\D{4}[-]\D{1}[-]\D{1}]|ー)+\z/},
+    format: { with: /\A([ぁ-んァ-ン一-龥a-zA-Z０-９\D{4}[-]\D{4}[-]\D{4}[-]\D{4}]|ー)+\z/},
     presence: true
   validates :building_name,
     format: { with: /\A([ぁ-んァ-ン一-龥0-9０-９]|ー)+\z/},
