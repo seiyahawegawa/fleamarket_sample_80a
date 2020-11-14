@@ -7,7 +7,7 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.item_images.new
-    @category_parent =  Category.where("ancestry is null")
+    @category_parent = Category.where(ancestry: nil)
   end
 
   def show
@@ -32,7 +32,7 @@ class ItemsController < ApplicationController
       redirect_to root_path
 
     else
-      @category_parent =  Category.where("ancestry is null")
+      @category_parent = Category.where(ancestry: nil)
       render :new
     end
   end
