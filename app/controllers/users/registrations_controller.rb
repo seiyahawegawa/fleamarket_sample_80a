@@ -91,6 +91,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def complete
   end
   
+  
   private
   def address_params
     params.require(:address).permit(:address_first_name,:address_family_name,:address_first_name_kana,:address_family_name_kana,:post_code,:prefecture_id,:city,:address_line,:building_name,:phone_number)
