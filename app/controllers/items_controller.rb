@@ -6,6 +6,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+  
     
   end  
   # 親カテゴリーが選択された後に動くアクション
