@@ -21,8 +21,7 @@ class Item < ApplicationRecord
   validates :prefecture_id, presence: true
   validates :days_to_delivery_id, presence: true
   validates :price,presence: true,numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999}
-
-  has_many :item_images
+  
   accepts_nested_attributes_for :item_images, allow_destroy: true
   belongs_to :user, foreign_key: 'user_id'
   belongs_to :category
