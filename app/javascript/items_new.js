@@ -18,7 +18,7 @@ $(function(){
       //子と孫を削除するする
     }else{
       $.ajax({
-        url: 'category_children',
+        url: '/items/category_children',
         type: 'GET',
         data: { parent_id: parentCategoryId },
         dataType: 'json'
