@@ -1,5 +1,9 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show,:destroy]
+
+  def buy
+  end
+  
   def index
     @items = Item.all
   end  
@@ -52,5 +56,6 @@ class ItemsController < ApplicationController
   def set_item 
     @item = Item.includes(:messages).find(params[:id])
   end
+    
 end
  
