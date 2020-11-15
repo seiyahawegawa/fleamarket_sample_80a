@@ -20,17 +20,25 @@
             .sell-container__content__upload__items
               .sell-container__content__upload__items__box
                 %ul#output-box
+                  - @item.item_images.each_with_index do |image, i|
+                    -if image.persisted?
+                      .image-content{ data:{ index: i }}
+                        = image_tag image.image.url,class:"image-box"
+                        .image_delete-button
+                          削除
                   %div#image-input
-                    = f.fields_for :item_images do |image|              
-                      %label.sell-container__content__upload__items__box__label{for:"item_item_images_attributes_0_image"} 
-                        %pre
+                    %label.sell-container__content__upload__items__box__label{for:"item_item_images_attributes_0_image"} 
+                      %pre
+                        #select_image
                           %i.fas.fa-camera.fa-lg
-                          %p.drop-and-drag
-                            ドラッグアンドドロップ
-                            またはクリックしてファイルをアップロード
+                        %p.drop-and-drag
+                          ドラッグアンドドロップ
+                          またはクリックしてファイルをアップロード
+                    = f.fields_for :item_images do |image|              
                       .image_group
                         = image.file_field :image,class:"image", data: {index: image.index}
-
+                      -if image.object.persisted?
+                        = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
 
           .error-messages#error-image
 
@@ -70,11 +78,11 @@
               = f.label :category_id, {class: 'sell-collection_select__label'} do
                 = f.collection_select :category_id, @category_parent, :id, :name, {prompt: "選択して下さい"},{ class: 'sell-collection_select__input', id: 'category-select', required: "required"}
                 %i.fas.fa-chevron-down
-            .sell-collection_select
+            .sell-collection_select#select-children-box
               = f.label :category_id, {class: 'sell-collection_select__label'} do
                 = f.collection_select :category_id, @item.category.parent.siblings, :id, :name, {selected: @item.category.parent_id},{ class: 'sell-collection_select__input', id: 'category-select-children', required: "required"}
                 %i.fas.fa-chevron-down
-            .sell-collection_select
+            .sell-collection_select#select-grandchildren-box
               = f.label :category_id, {class: 'sell-collection_select__label'} do
                 = f.collection_select :category_id, @item.category.siblings, :id, :name, {selected: @item.category_id},{ class: 'sell-collection_select__input', id: 'category-select-grandchildren', required: "required"}
                 %i.fas.fa-chevron-down
