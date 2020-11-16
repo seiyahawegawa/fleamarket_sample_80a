@@ -1,10 +1,10 @@
 class Item < ApplicationRecord
 
-  belongs_to :category
-  belongs_to :user
-  has_many :item_images,dependent: :destroy
-  has_many :messages, dependent: :destroy
-  accepts_nested_attributes_for :item_images, allow_destroy: true
+  # belongs_to :category
+  # belongs_to :user
+  # has_many :item_images,dependent: :destroy
+  # has_many :messages, dependent: :destroy
+  # accepts_nested_attributes_for :item_images, allow_destroy: true
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :prefecture
@@ -22,9 +22,9 @@ class Item < ApplicationRecord
   validates :days_to_delivery_id, presence: true
   validates :price,presence: true,numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999}
 
-  has_many :item_images
+  has_many :item_images,dependent: :destroy
   accepts_nested_attributes_for :item_images, allow_destroy: true
   belongs_to :user, foreign_key: 'user_id'
   belongs_to :category
-  
+  has_many :messages, dependent: :destroy
 end
