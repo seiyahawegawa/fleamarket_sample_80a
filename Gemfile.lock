@@ -251,7 +251,6 @@ GEM
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
     rmagick (4.1.2)
-
     rspec-core (3.10.0)
       rspec-support (~> 3.10.0)
     rspec-expectations (3.10.0)
@@ -375,10 +374,7 @@ DEPENDENCIES
   pry-rails
   puma (~> 3.11)
   rails (~> 6.0.0)
-
   rails-controller-testing
-  rmagick
-  rspec-rails (~> 4.0.0.beta2)
   rails-i18n
   rmagick
   rspec-rails
