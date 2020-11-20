@@ -28,7 +28,7 @@
     font-weight: 800;
     height: 50px;
     width: 450px;
-    background-color: red;
+    background-color: #ff7f50;
     color: white;
     font-weight: 800;
     display: flex;
@@ -36,7 +36,7 @@
     align-items: center;
 }
   &__btns:hover {
-    background-color: #dc143c;
+    background-color: red;
   }
 }
 

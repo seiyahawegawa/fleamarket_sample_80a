@@ -5,8 +5,8 @@ class CreditCardsController < ApplicationController
   end
 
   def new
-    card = CreditCard.where(user_id_id: current_user.id)
-    redirect_to action: "show" if card.exists?
+    card = CreditCard.where(user_id: current_user.id)
+    redirect_to credit_card_path(current_user.id) if card.exists?
   end
 
   def create
@@ -19,7 +19,9 @@ class CreditCardsController < ApplicationController
         card: params['payjp_token'],
         metadata: {user_id_id: current_user.id}
       )
-      @credit = CreditCard.new(user_id_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
+      # @credit = CreditCard.new(card_params)
+      @credit = CreditCard.new(user_id: current_user.id, card_id: customer.default_card ,customer_id: customer.id)
+
       if @credit.save
         redirect_to credit_card_path(current_user.id)
       else
@@ -29,36 +31,39 @@ class CreditCardsController < ApplicationController
   end
   
   def show
-    card = CreditCard.where(user_id_id: current_user.id).first
+    card = CreditCard.where(user_id: current_user.id).first
     if card.blank?
       redirect_to action: "new"
     else
       Payjp.api_key = Rails.application.credentials[:payjp][:secret_key]
-      customer = Pay.jp::Customer.retrieve(card.custmer_id)
+      customer = Payjp::Customer.retrieve(card.customer_id)
       @default_card_information = customer.cards.retrieve(card.card_id)
-      @card_brand = @default_card_information.card_brand
-      case @card_brand
-      when "visa"
-        @card_src = "visa.gif"
-      when "JCB"
-        @card_src = "jcb.gif"
-      when "MasterCard"
-        @card_src = "mastercard.gif"
-      when "amex"
-        @card_src = "amex.gif"
-      end
+      @card_brand = @default_card_information.brand
+      # case @card_brand
+      # when "visa"
+      #   @card_src = "visa.gif"
+      # when "JCB"
+      #   @card_src = "jcb.gif"
+      # when "MasterCard"
+      #   @card_src = "mastercard.gif"
+      # when "amex"
+      #   @card_src = "amex.gif"
+      # end
     end
   end
   
   def destroy
-    card = CreditCard.where(user_id_id: current_user.id).first
+    card = CreditCard.where(user_id: current_user.id).first
     if card.blank?
+      redirect_to action: "new"
     else
       Payjp.api_key = Rails.application.credentials[:payjp][:secret_key]
       customer = Payjp::Customer.retrieve(card.customer_id)
-      customer.destroy
-      card.destroy
+      customer.delete
+      card.delete
     end
-      redirect_to action: "new"
+      # redirect_to action: "new"
   end
+
+ 
 end

@@ -1,31 +1,32 @@
 =render "shared/header"
 .Wrapper
- = render 'users/sidemenu'
- .Create
-   .Create__frame
-     .Create__frame-message
-       登録が完了しました
+  = render 'users/sidemenu'
+  .Create
+    .Create__frame
+      .Create__frame-message
+        登録が完了しました
+      
+      .Credit-card__details
+        .Credit-card__details__information
+          登録クレジットカード情報
+        .Credit-card__details__alls
+          .Credit-card__details__left
+            .Credit-card__details__left-brand
+              -# = image_tag('images/#{@card_src}', alt: @card_brand, height: '46', width: '46', class: 'card_image')
+            .Credit-card__details__left-number
+              = "**** **** **** " + @default_card_information.last4
+            .Credit-card__details__left-deadline
+              - exp_month = @default_card_information.exp_month.to_s
+              - exp_year = @default_card_information.exp_year.to_s
+              = exp_month + " / " + exp_year
+
+          .Credit-card__details__right
+            .Credit-card__details__delete
+              = link_to credit_card_path, method: :delete, class: 'Credit-card__details__delete-btn' do
+                削除する
     
-     .Create__card-details
-       .Credit__card-details_information
-         登録クレジットカード情報
-       .Credit__card-details_left
-         .Credit__card-details_left_brand
-           - if @card_brand == "amex"
-             = image_tag('images/#{@card_src}', alt: @card_brand, height: '46', width: '46', class: 'card_image')
-           - else
-             = image_tag('images/#{@card_src}', alt: @card_brand, height: '33', width: '46', class: 'card_image')
-         .Credit__card-details_left_number
-           = "**** **** **** " + @default_card_information.last4
-         .Credit__card-details_left_deadline
-           - exp_month = @default_card_information.exp_month.to_s
-           - exp_year = @default_card_information.exp_year.to_s
-           = exp_month + " / " + exp_year
-       .Credit__card-details_right
-         .Credit__card-details_right_delete
-          
-     .Create__frame-toppage
-       = link_to root_path(current_user.id) do
-       .Create__frame-topbtn
-         トップページ画面へ
+      .Create__frame-toppage
+        = link_to root_path(current_user.id) do
+          .Create__frame-topbtn
+            トップページ画面へ
 =render "shared/footer"
