@@ -3,6 +3,8 @@ class Item < ApplicationRecord
   belongs_to :user
   has_many :item_images,dependent: :destroy
   has_many :messages, dependent: :destroy
+  validates:item_images, length: { minimum: 1 }
+  validates:item_images, length: { maximum: 5 }
   accepts_nested_attributes_for :item_images, allow_destroy: true, update_only: true
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :prefecture

@@ -1,4 +1,3 @@
-
 .sell
   %header.sell-header 
     = link_to root_path do
@@ -15,7 +14,7 @@
               出品画像
               %span.sell-title__require
                 必須
-          .sell-container__content__max-sheet 最大10枚までアップロードできます
+          .sell-container__content__max-sheet 最大5枚までアップロードできます
           .sell-container__content__upload
             .sell-container__content__upload__items
               .sell-container__content__upload__items__box
@@ -26,20 +25,30 @@
                         = image_tag image.image.url,class:"image-box"
                         .image_delete-button
                           削除
-                  %div#image-input
-                    %label.sell-container__content__upload__items__box__label{for:"item_item_images_attributes_0_image"} 
-                      %pre
-                        #select_image
-                          %i.fas.fa-camera.fa-lg
-                        %p.drop-and-drag
-                          ドラッグアンドドロップ
-                          またはクリックしてファイルをアップロード
-                    = f.fields_for :item_images do |image|              
-                      .image_group
+                  -if @item.item_images.length <= 5
+                    %div#image-input
+                      %label.sell-container__content__upload__items__box__label{for:"item_item_images_attributes_#{@item.item_images.length-1}_image"} 
+                        %pre
+                          #select_image
+                            %i.fas.fa-camera.fa-lg
+                          %p.drop-and-drag
+                    .image_group
+                      = f.fields_for :item_images do |image|              
                         = image.file_field :image,class:"image", data: {index: image.index}
-                      -if image.object.persisted?
-                        = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
-
+                        -if image.object.persisted?
+                          = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
+                  -else
+                    %div#image-input{style: "display: none"}
+                      %label.sell-container__content__upload__items__box__label{for:"item_item_images_attributes_#{@item.item_images.length-1}_image"} 
+                        %pre
+                          #select_image
+                            %i.fas.fa-camera.fa-lg
+                          %p.drop-and-drag
+                      = f.fields_for :item_images do |image|              
+                        .image_group
+                          = image.file_field :image,class:"image", data: {index: image.index}
+                        -if image.object.persisted?
+                          = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
           .error-messages#error-image
 
         -#商品名部分
@@ -76,15 +85,15 @@
                   必須
             .sell-collection_select
               = f.label :category_id, {class: 'sell-collection_select__label'} do
-                = f.collection_select :category_id, @category_parent, :id, :name, {prompt: "選択して下さい"},{ class: 'sell-collection_select__input', id: 'category-select', required: "required"}
+                = f.collection_select :category_id, @category_parent, :id, :name, {include_blank: "選択して下さい", selected: @item.category.root_id}, { class: 'sell-collection_select__input', id: 'category-select', required: "required"}
                 %i.fas.fa-chevron-down
             .sell-collection_select#select-children-box
               = f.label :category_id, {class: 'sell-collection_select__label'} do
-                = f.collection_select :category_id, @item.category.parent.siblings, :id, :name, {selected: @item.category.parent_id},{ class: 'sell-collection_select__input', id: 'category-select-children', required: "required"}
+                = f.collection_select :category_id, @item.category.parent.siblings, :id, :name, {include_blank: "選択して下さい", selected: @item.category.parent_id},{ class: 'sell-collection_select__input', id: 'category-select-children', required: "required"}
                 %i.fas.fa-chevron-down
             .sell-collection_select#select-grandchildren-box
               = f.label :category_id, {class: 'sell-collection_select__label'} do
-                = f.collection_select :category_id, @item.category.siblings, :id, :name, {selected: @item.category_id},{ class: 'sell-collection_select__input', id: 'category-select-grandchildren', required: "required"}
+                = f.collection_select :category_id, @item.category.siblings, :id, :name, {include_blank: "選択して下さい", selected: @item.category_id},{ class: 'sell-collection_select__input', id: 'category-select-grandchildren', required: "required"}
                 %i.fas.fa-chevron-down
             .error-messages#error-category
 
@@ -154,7 +163,7 @@
             .sell-container__content__price__form
               = f.label :price, class: 'sell-container__content__price__form__label' do
                 ¥
-                = f.number_field :price, {placeholder: '0', value: '', autocomplete:"off", class: 'sell-container__content__price__form__box', required: "required"}
+                = f.number_field :price, class: 'sell-container__content__price__form__box', placeholder: '0'
           .error-messages#error-price
 
           .sell-container__content__commission
