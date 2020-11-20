@@ -16,6 +16,10 @@ Rails.application.routes.draw do
     post 'addresses', to: 'users/registrations#create_address'
   end
 
+  devise_scope :user do
+    get "complete", :to => "users/registrations#complete"
+  end
+
   root 'items#index'
   resources :credit_cards, only: [:index, :new, :create, :show] 
   resources :logouts, only: [:index]
@@ -29,4 +33,8 @@ Rails.application.routes.draw do
     end
     resources :messages, only: [:create, :destroy, :new] 
   end
+
+  resources :buys, only: [:index]
+    
+
 end

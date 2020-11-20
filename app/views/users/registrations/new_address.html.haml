@@ -1,3 +1,4 @@
+=render "shared/header"
 .Address
   .Address__box
     .Address__item
@@ -10,41 +11,38 @@
             お名前（全角）
             %span.Form-require 必須
           .Address__form-set__fullname
-            = f.text_field :lastname, class: "Address__form-set__fullname-lastname", placeholder: "例)山田"
-            = f.text_field :firstname, class: "Address__form-set__fullname-firstname", placeholder: "例)太郎"
+            = f.text_field :address_family_name, class: "Address__form-set__fullname-lastname", placeholder: "例)山田"
+            = f.text_field :address_first_name, class: "Address__form-set__fullname-firstname", placeholder: "例)太郎"
           .Address__form-set__Kana
             お名前カナ（全角）
             %span.Form-require 必須
           .Address__form-set__kanafull
-            = f.text_field :kana_lastname, class: "Address__form-set__kanafull-lastname", placeholder: "例)ヤマダ"
-            = f.text_field :kana_firstname, class: "Address__form-set__kanafull-firstname", placeholder: "例)タロウ"
+            = f.text_field :address_family_name_kana, class: "Address__form-set__kanafull-lastname", placeholder: "例)ヤマダ"
+            = f.text_field :address_first_name_kana, class: "Address__form-set__kanafull-firstname", placeholder: "例)タロウ"
           .Address__form-set__PostalCode
+            郵便番号（半角）
             %span.Form-require 必須
-          = f.text_field :PostalCode, class: "Address__form-set__PostalCode-number", placeholder: "都道府県"
+          = f.text_field :post_code, class: "Address__form-set__PostalCode-number", placeholder: "郵便番号 ※ハイフン不要"
+          .Address__form-set__Prefecture_id
+            都道府県
+            %span.Form-require 必須
+          = f.text_field :prefecture_id, class: "Address__form-set__Prefecture", placeholder: "都道府県"
           .Address__form-set__municipality
+            市区町村
             %span.Form-require 必須
-          = f.text_field :municipality, class: "Address__form-set__municipality-name", placeholder: "市区町村"
+          = f.text_field :city, class: "Address__form-set__municipality-name", placeholder: "市区町村"
           .Address__form-set__houseNumber
+            番地以降（全角）
             %span.Form-require 必須
-          = f.text_field :housenumber, class: "Address__form-set__houseNumber-math",placeholder: "番地"
+          = f.text_field :address_line, class: "Address__form-set__houseNumber-math",placeholder: "○丁目○番地○"
           .Address__form-set__apartment
-            = f.text_field :apartment, class: "Address__form-set__apartment-name", placeholder: "マンション名やビル名"
-          .Address__form-set__room
-          = f.text_field :room, class: "Address__form-set__room-number", placeholder: "部屋番号"
+            = f.text_field :building_name, class: "Address__form-set__apartment-name", placeholder: "○マンション/○ビル○号室"
+          //.Address__form-set__room
+          //= f.text_field :room, class: "Address__form-set__room-number", placeholder: "部屋番号"
           .Address__form-set__phone
-          = f.text_field :phone, class: "Address__form-set__phone-number", placeholder: "電話番号"
+            電話番号（半角）
+            %span.Form-require.option 任意
+          = f.text_field :phone_number, class: "Address__form-set__phone-number", placeholder: "電話番号"
           .Address__form-set__user-register
           = f.submit "ユーザー登録", class: "Address__form-set__user-register-btn"
-
-          
-
-
-
-
-
-      
-      
-      
-
-      
-
+=render "shared/footer"
