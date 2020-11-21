@@ -25,7 +25,6 @@ $(function() {
   //ここの記述で、インプットボタンを押した時にイベントが起きる
   $(document).on('change', ".image", function(e){
     var ImageContent = $(".image-content").length
-    console.log(ImageContent)
     var index = $(this).data("index")
   
     index += 1;
@@ -44,7 +43,6 @@ $(function() {
       $('.sell-container__content__upload__items__box__label').attr("for", `item_item_images_attributes_${index}_image`);
       $(".drop-and-drag").text("")
     } else {
-      console.log('OK3')
       $("#output-box").append(buildImg(ImageContent, blobUrl));
     }
   })
