@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show,:destroy]
+  before_action :set_item, only: [:show,:destroy,:edit,:update]
   def index
     @items = Item.all
   end  
@@ -7,11 +7,11 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.item_images.new
-    @category_parent = Category.where(ancestry: nil)
+    @category_parent = Category.where("ancestry is null")
   end
 
   def show
-    @message =Message.new
+    @message = Message.new
   end  
   # 親カテゴリーが選択された後に動くアクション
   def category_children
@@ -44,6 +44,22 @@ class ItemsController < ApplicationController
       render :edit
     end
   end   
+
+  def edit
+    # エラー防止の為仮置でインスタンス変数を定義
+    @category_parent = Category.where("ancestry is null")
+    @item.item_images.new
+  end
+
+  def update
+    @category_parent = Category.where("ancestry is null")
+    if @item.update(item_params)
+      redirect_to root_path, notice: '更新しました'
+    else
+      render :edit
+    end
+  end
+  
   private
 
   def item_params
