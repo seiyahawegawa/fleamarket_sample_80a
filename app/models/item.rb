@@ -12,7 +12,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :shopping_charges
   belongs_to_active_hash :days_to_delivery
 
-  validates :item_images, presence: true, length: { maximum: 10 }
+  validates :item_images, presence: true, length: { maximum: 5 }
   validates :item_name, presence: true, length: { maximum: 40 }
   validates :item_description, presence: true, length: { maximum: 1000 }
   validates :category_id, presence: true
