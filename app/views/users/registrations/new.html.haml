@@ -4,7 +4,6 @@
     .new--registration
       %p 新規登録
     = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-      = render "devise/shared/error_messages", resource: resource
       .registration_form
         .registration__nickname
           = f.label :nickname, "ニックネーム"

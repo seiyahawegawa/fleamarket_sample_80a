@@ -200,7 +200,7 @@ img {
                   color: rgb(0, 149, 238);
                 }
               }
-              #image-input,#image-input-secound{
+              #image-input{
                 box-sizing: border-box;
                 height: 100%;
                 -webkit-flex: 1;
@@ -226,12 +226,6 @@ img {
                     box-sizing: border-box;
                     // margin-bottom: 8px;
                   }
-                } 
-                .image_group{
-                  display: flex; 
-                  .image{
-                    display: none;
-                  }   
                   .image-content{
                     background: rgb(204, 204, 204);
                     height: 150px;
@@ -395,4 +389,16 @@ img {
       }
     }
   }
+}
+
+.hidden-destroy{
+  display: block;
+}
+
+.image_group{
+  display: flex; 
+  display: none;
+  .image{
+    display: none;
+  }   
 }
