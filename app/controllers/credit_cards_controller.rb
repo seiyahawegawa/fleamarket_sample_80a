@@ -21,7 +21,6 @@ class CreditCardsController < ApplicationController
       )
       # @credit = CreditCard.new(card_params)
       @credit = CreditCard.new(user_id: current_user.id, card_id: customer.default_card ,customer_id: customer.id)
-
       if @credit.save
         redirect_to credit_card_path(current_user.id)
       else

@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   end
 
   root 'items#index'
-  resources :credit_cards, only: [:index, :new, :show, :destoroy] 
+  resources :credit_cards, only: [:index, :new, :create, :show, :destroy]
   resources :logouts, only: [:index]
   resources :users, only: [:index]
   resources :categories, only: :index
