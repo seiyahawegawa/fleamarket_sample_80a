@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 2020_10_30_114431) do
     t.string "card_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id_id"], name: "index_credit_cards_on_user_id_id"
+    t.index ["user_id"], name: "index_credit_cards_on_user_id_id"
   end
 
   create_table "item_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
