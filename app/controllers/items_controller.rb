@@ -59,6 +59,16 @@ class ItemsController < ApplicationController
       render :edit
     end
   end
+
+  def buy
+    @user = current_user
+    card = CreditCard.where(user_id: current_user.id).first
+    @item = Item.find(params[:id])
+    Payjp.api_key = Rails.application.credentials[:payjp][:secret_key]
+    customer = Payjp::Customer.retrieve(card.customer_id)
+    @default_card_information = customer.cards.retrieve(card.card_id)
+    @addresses = Address.where(user_id: current_user.id).first
+  end
   
   private
 
