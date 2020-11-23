@@ -1,9 +1,9 @@
 =render "shared/header"
 .Wrapper
   = render "users/sidemenu"
-    .Logout
-      .Logout__boxs
-        .Logout__btns
-          = link_to destroy_user_session_path, method: :delete do
-            ログアウト
+  .Logout
+    .Logout__boxs
+      .Logout__btns
+        = link_to destroy_user_session_path, method: :delete do
+          ログアウト
 =render "shared/footer"
