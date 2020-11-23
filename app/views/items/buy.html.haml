@@ -1,0 +1,70 @@
+.header_logo_box
+	= image_tag "https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg" ,class:"image_log"
+.main
+	.confirmation_box
+		.confirmation
+			%h2.confirmation_name
+				購入内容の確認
+		.item_image_name_price
+			.image_box
+				=image_tag "https://navi.harinezumi.org/wp-content/uploads/kohari12.jpg",class:"item_image"
+			.item_name_price	
+				.item_name
+					= @item.item_name
+				%p.item_price
+					%span.postage_included
+						送料込み(税込)
+					%span.price
+						¥
+						= @item.price.to_s(:delimited)
+		.payment_box
+			%spne.payment
+				支払い金額
+			%span.payment_price
+				¥
+				= @item.price.to_s(:delimited)
+
+		.metho_payment_box
+			.metho_payment
+				%h3.metho_payment
+					支払い方法
+			.metho_payment_category
+				クレジットカード
+				%p
+				= "**** **** **** " + @default_card_information.last4
+				%p
+				- exp_month = @default_card_information.exp_month.to_s
+				- exp_year = @default_card_information.exp_year.to_s
+				= exp_month + " / " + exp_year
+				//= image_tag "https://web-jp-assets.mercdn.net/_next/static/images/jcb-9ea981d20008c6545aa3afd1b3da9804.svg",class:"credit_image"
+		.shipping_address_box
+			.shipping_address
+				配送先
+			%p
+				%br
+				= @addresses.post_code
+				%br
+				= @addresses.prefecture_id
+				%br
+				= @addresses.city
+				= @addresses.address_line
+				= @addresses.building_name
+				%br
+				= @addresses.phone_number
+				%br
+				= @user.family_name
+				= @user.first_name
+				
+		.buy_button_box
+			= form_with url: '#', method: :post, local: true do |f|
+				= f.submit "購入する", class: "buy_button"
+
+.footer_notes
+	%ul
+		%li
+			プライバシーポリシー
+		%li	
+			利用規約
+		%li
+			特定商取引に関する表記
+	= image_tag "https://web-jp-assets.mercdn.net/_next/static/images/logotype-gray-432385160bc60aa0002854fccdef2caf.svg", class:"notes_log"
