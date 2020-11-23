@@ -1,20 +1,22 @@
+=render "shared/header"
 .Mypage-main
-  = render 'users/sidemenu'
-  .Mypage-main__rightside
-    .Mypage-main__area
-      = link_to "#" do
-        .Mypage-main__user-space
-          .Mypage-main__user
-            = image_tag('avatardefault_92824.png', class: 'Mypage-main__img')
-            .Mypage-main__name
-              ユーザー名
-            .Mypage-main__number
-              .Mypage-main__evaluation
-                %span 評価
-                %span 0  
-              .Mypage-main__sell
-                %span 出品数 
-                %span 0  
+ = render 'users/sidemenu'
+ .Mypage-main__rightside
+   .Mypage-main__area
+     = link_to "#" do
+       .Mypage-main__user-space
+         .Mypage-main__user
+           = image_tag('avatardefault_92824.png', class: 'Mypage-main__img')
+           .Mypage-main__name
+             = current_user.nickname
+           .Mypage-main__number
+             .Mypage-main__evaluation
+               %span 評価
+               %span 0 
+             .Mypage-main__sell
+               %span 出品数
+               %span 0 
+=render "shared/footer"
 
   
 
