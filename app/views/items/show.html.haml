@@ -70,7 +70,7 @@
 		.user-buy-edit-delete-box
 			.user-buy-edit-delete
 				- if user_signed_in? && current_user.id ==@item.user_id
-					= link_to "#",class: "edit-box" do
+					= link_to edit_item_path(@item.id),class: "edit-box" do
 						商品の編集
 					%span.or
 						or	
