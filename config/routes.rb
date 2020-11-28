@@ -30,8 +30,14 @@ Rails.application.routes.draw do
     collection do
       get 'category_children', defaults: { format: 'json' }
       get 'category_grandchildren', defaults: { format: 'json' }
-      get 'buy'
     end
+
+    member do
+      get 'buy'
+      get 'purchased'
+      post 'purchase'
+    end
+
     resources :messages, only: [:create, :destroy, :new] 
   end
 

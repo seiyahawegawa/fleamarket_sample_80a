@@ -7,16 +7,16 @@
 				購入内容の確認
 		.item_image_name_price
 			.image_box
-				=image_tag "https://navi.harinezumi.org/wp-content/uploads/kohari12.jpg",class:"item_image"
+				=image_tag(@item.item_images[0].image.url)
 			.item_name_price	
 				.item_name
-					= @item.item_name
+					=@item.item_name
 				%p.item_price
 					%span.postage_included
 						送料込み(税込)
 					%span.price
 						¥
-						= @item.price.to_s(:delimited)
+						=@item.price.to_s(:delimited)
 		.payment_box
 			%spne.payment
 				支払い金額
