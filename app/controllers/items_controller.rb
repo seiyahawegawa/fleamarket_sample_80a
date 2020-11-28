@@ -59,6 +59,35 @@ class ItemsController < ApplicationController
       render :edit
     end
   end
+
+  def buy
+    @user = current_user
+    card = CreditCard.where(user_id: current_user.id).first
+    @item = Item.find(params[:id])
+    # @items = ItemImages.find(params[:id])
+    Payjp.api_key = Rails.application.credentials[:payjp][:secret_key]
+    customer = Payjp::Customer.retrieve(card.customer_id)
+    @default_card_information = customer.cards.retrieve(card.card_id)
+    @addresses = Address.where(user_id: current_user.id).first
+  end
+
+  def purchase
+    @creditcard = CreditCard.where(user_id: current_user.id).first
+    @item = Item.find(params[:id])
+    Payjp.api_key = Rails.application.credentials[:payjp][:secret_key]
+    charge = Payjp::charge.create(
+      amount: @item.price,
+      customer: Payjp::Customer.retrieve(@creditcard.customer_id),
+      currency: 'jpy'
+    )
+    @item_buyer = Item.find(params[:id])
+    @item_buyer.update(buyer_id: current_user.id)
+    redirect_to root_path
+  end
+
+  def purchased
+    
+  end
   
   private
 

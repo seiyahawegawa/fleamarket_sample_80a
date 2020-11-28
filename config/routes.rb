@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   end
 
   root 'items#index'
-  resources :credit_cards, only: [:index, :new, :create, :show] 
+  resources :credit_cards, only: [:index, :new, :create, :show, :destroy]
   resources :logouts, only: [:index]
   resources :users, only: [:index]
   resources :categories, only: :index
@@ -31,6 +31,13 @@ Rails.application.routes.draw do
       get 'category_children', defaults: { format: 'json' }
       get 'category_grandchildren', defaults: { format: 'json' }
     end
+
+    member do
+      get 'buy'
+      get 'purchased'
+      post 'purchase'
+    end
+
     resources :messages, only: [:create, :destroy, :new] 
   end
 
