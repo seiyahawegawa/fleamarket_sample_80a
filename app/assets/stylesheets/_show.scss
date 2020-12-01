@@ -180,6 +180,36 @@
       }
     }
   }
+  .user-purchased-btn {
+    display: block;
+    margin-bottom: 16px;
+    background: #aaa;
+    font-size: 24px;
+    color: #fff;
+    line-height: 48px;
+    text-align: center;
+    font-weight: 600;
+    -webkit-transition: all ease-out .3s;
+    transition: all ease-out .3s;
+    border-radius: 4px;
+  }
+
+  .buyer-sign-btn {
+    display: block;
+    margin-top: 24px;
+    background: #ea352d;
+    font-size: 24px;
+    color: #fff;
+    line-height: 48px;
+    text-align: center;
+    font-weight: 600;
+    -webkit-transition: all ease-out .3s;
+    transition: all ease-out .3s;
+    border-radius: 4px;
+    margin-right: 350px;
+    margin-left: 350px;
+  }
+
   .item-detail-message{
     width: 700px;
     margin: 8px auto;
