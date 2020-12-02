@@ -56,8 +56,9 @@
 				= @user.first_name
 				
 		.buy_button_box
-			= form_with url: '#', method: :post, local: true do |f|
+			= form_with url: purchase_item_path, method: :post, local: true do |f|
 				= f.submit "購入する", class: "buy_button"
+			
 
 .footer_notes
 	%ul

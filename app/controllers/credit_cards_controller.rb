@@ -48,6 +48,7 @@ class CreditCardsController < ApplicationController
       # when "amex"
       #   @card_src = "amex.gif"
       # end
+
     end
   end
   

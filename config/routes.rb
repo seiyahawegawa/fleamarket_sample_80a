@@ -36,6 +36,7 @@ Rails.application.routes.draw do
       get 'buy'
       get 'purchased'
       post 'purchase'
+
     end
 
     resources :messages, only: [:create, :destroy, :new] 

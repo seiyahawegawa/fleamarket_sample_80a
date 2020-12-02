@@ -153,9 +153,10 @@
                   1
             %p.pickup_brand__taxIncluded
               (税込)
-            .items-box_photo__sold
-              .items-box_photo__sold__inner
-                SOLD  
+              - if item.buyer_id.present?  
+                .items-box_photo__sold
+                  .items-box_photo__sold__inner
+                    SOLD  
     
 .pickup_brand__containerBrand
   %h2.pickup_brand__containerBrand__title
