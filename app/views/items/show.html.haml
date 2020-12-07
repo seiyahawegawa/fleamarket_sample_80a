@@ -7,19 +7,19 @@
 					=@item.item_name
 			.item-image-box
 				.image-main
-					.image-main-image
-						= image_tag(@item.item_images[0].image.url )
-				.sub-image	
-					= image_tag "https://navi.harinezumi.org/wp-content/uploads/kohari12.jpg",class:"image-sub-image"
-					= image_tag "https://navi.harinezumi.org/wp-content/uploads/kohari12.jpg",class:"image-sub-image"
+					- @item.item_images.first(1).each do |img|
+						= image_tag "#{img.image.url}",class:"image-main-image"	
+				.sub-image
+					- @item.item_images.first(5).each do |img|	
+						= image_tag "#{img.image.url}", class:"image-sub-image"
 
-			.item-price-box
-				%span.item-price
-					= number_to_currency(@item.price, format: "%u%n", unit: "￥",precision: 0)
-				%sane.item-tex
-					(税込)
-				%span.item-shipping-fee
-					送料込み
+				.item-price-box
+					%span.item-price
+						= number_to_currency(@item.price, format: "%u%n", unit: "￥",precision: 0)
+					%sane.item-tex
+						(税込)
+					%span.item-shipping-fee
+						送料込み
 
 			.item-description
 				= @item.item_description
