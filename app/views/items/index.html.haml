@@ -135,31 +135,31 @@
     .pickup_brand__containerBrand__product__head
       = link_to "#", class: "pickup_brand__products--head" do
         %h3.pickup_brand__head
--#           新規投稿商品
--#     .pickup_brand__containerBrand__product--lists
--#       - @items.each do |item|
--#         .pickup_brand__containerBrand__product--lists__list
--#           = link_to item_path(item.id) ,class: "image_tag" do
--#             %figure.pickup_brand__product__images
--#               = image_tag item.item_images[0].image.url, class: "pickup_brand__product__images--image" if item.item_images[0].present?
--#           .pickup_brand__containerBrand__product--lists__list__body
--#             %h3.pickup_brand__product--name
--#               =item.item_name
--#             %ul.pickup_brand__details__menu
--#               %li 
--#                 = number_to_currency(item.price, format: "%u%n", unit: "￥",precision: 0)
--#               %li
--#                 %i.fa.fa-star.likeIcon
--#                   1
--#             %p.pickup_brand__taxIncluded
--#               (税込)
--#               - if item.buyer_id.present?  
--#                 .items-box_photo__sold
--#                   .items-box_photo__sold__inner
--#                     SOLD  
+          新規投稿商品
+    .pickup_brand__containerBrand__product--lists
+      - @items.each do |item|
+        .pickup_brand__containerBrand__product--lists__list
+          = link_to item_path(item.id) ,class: "image_tag" do
+            %figure.pickup_brand__product__images
+              = image_tag item.item_images[0].image.url, class: "pickup_brand__product__images--image" if item.item_images[0].present?
+          .pickup_brand__containerBrand__product--lists__list__body
+            %h3.pickup_brand__product--name
+              =item.item_name
+            %ul.pickup_brand__details__menu
+              %li 
+                = number_to_currency(item.price, format: "%u%n", unit: "￥",precision: 0)
+              %li
+                %i.fa.fa-star.likeIcon
+                  1
+            %p.pickup_brand__taxIncluded
+              (税込)
+              - if item.buyer_id.present?  
+                .items-box_photo__sold
+                  .items-box_photo__sold__inner
+                    SOLD  
     
--# .pickup_brand__containerBrand
--#   %h2.pickup_brand__containerBrand__title
+.pickup_brand__containerBrand
+  %h2.pickup_brand__containerBrand__title
     ピックアップブランド
   .pickup_brand__containerBrand__product
     .pickup_brand__containerBrand__product__head
