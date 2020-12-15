@@ -141,7 +141,7 @@
         .pickup_brand__containerBrand__product--lists__list
           = link_to item_path(item.id) ,class: "image_tag" do
             %figure.pickup_brand__product__images
-              = image_tag item.item_images[0].image.url, class: "pickup_brand__product__images--image"
+              = image_tag item.item_images[0].image.url, class: "pickup_brand__product__images--image" if item.item_images[0].present?
           .pickup_brand__containerBrand__product--lists__list__body
             %h3.pickup_brand__product--name
               =item.item_name
